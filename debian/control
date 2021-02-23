@@ -1,0 +1,16 @@
+Source: dtkcommon
+Section: libdevel
+Priority: optional
+Maintainer: Deepin Packages Builder <packages@deepin.com>
+Build-depends: debhelper (>= 9), pkg-config, libglib2.0-bin
+Standards-Version: 3.9.8
+Homepage: http://www.deepin.org/
+
+Package: libdtkcommon
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Conflicts: libdtkcore5 (<< 5.5), libdtkgui5 (<< 5.5)
+Breaks: libdtkcore5 (<< 5.5), libdtkgui5 (<< 5.5)
+Description: dtk common files
+ dtkcommon contains a collection of common files(schemas, configs) for
+ settings shared by dtk libraries.
