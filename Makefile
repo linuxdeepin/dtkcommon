@@ -1,26 +1,52 @@
 PREFIX	:= /usr
-ARCH    := x86
+ARCH    := $(shell uname -m)
+
+
+features_files = features/dtk_module.prf \
+				features/dtk_build_config.prf \
+				features/dtk_lib.prf \
+				features/dtk_qmake.prf \
+				features/dtk_cmake.prf \
+				features/dtk_build.prf \
+				features/dtk_translation.prf
+
+features_files_install_path = /usr/lib/$(shell uname -m)-linux-gnu/qt5/mkspecs/features
+
+
+schemas_files = schemas/com.deepin.dtk.gschema.xml
+schemas_files_install_path = /usr/share/glib-2.0/schemas/
+
+confs_files = confs/com.deepin.dtk.FileDrag.conf
+confs_files_install_path = /etc/dbus-1/system.d/
 
 all: build
 
 build: cfgs
 	@echo build for arch: $(ARCH)
-	mkdir -p result
-	find schemas -name "*.xml" -exec cp {} result \;
-	find confs -name "*.conf" -exec cp {} result \;
 
 test: 
 	@echo "Testing schemas with glib-compile-shemas..."
-	glib-compile-schemas --dry-run result
+	@glib-compile-schemas --dry-run schemas
 
 install:
 	@echo install for arch:$(ARCH)
-	mkdir -p $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
-	install -v -m 0644 result/*.xml $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas/
-	mkdir -p $(DESTDIR)/etc/dbus-1/system.d/
-	install -v -m 0644 result/*.conf $(DESTDIR)/etc/dbus-1/system.d/
+	@test -d $(DESTDIR)$(features_files_install_path) || mkdir -p $(DESTDIR)$(features_files_install_path)
+	@test -d $(DESTDIR)$(schemas_files_install_path) || mkdir -p $(DESTDIR)$(schemas_files_install_path)
+	@test -d $(DESTDIR)$(confs_files_install_path) || mkdir -p $(DESTDIR)$(confs_files_install_path)
+	install -v -m 0644 $(schemas_files) $(DESTDIR)$(schemas_files_install_path)
+	install -v -m 0644 $(confs_files) $(DESTDIR)$(confs_files_install_path)
+	install -v -m 0644 $(features_files) $(DESTDIR)$(features_files_install_path)
 
-clean:
-	-rm -rf result
+uninstall:
+	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_module.prf
+	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_build_config.prf
+	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_lib.prf
+	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_qmake.prf
+	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_cmake.prf
+	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_build.prf
+	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_translation.prf
+	-rm -f $(DESTDIR)$(confs_files_install_path)/com.deepin.dtk.FileDrag.conf
+	-rm -f $(DESTDIR)$(schemas_files_install_path)/com.deepin.dtk.gschema.xml
+
 
 .PHONY: cfgs
