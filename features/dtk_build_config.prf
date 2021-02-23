@@ -1,6 +1,6 @@
 isEmpty(DTK_MODULE_NAME): error(set DTK_MODULE_NAME first)
 !contains(DTK_MODULE_NAME, ^dtk[a-z0-9]+$): error(The format of the value of DTK_MODULE_NAME is incorrect. eg: dtk[a-z0-9]+)
-!isEqual(DTK_MODULE_NAME, dtkcore):!contains(QT, dtkcore): error(QT += dtkcore first)
+!contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9]*$):!contains(QT, dtkcore): error(QT += dtkcore first)
 
 #将首字母改为大写
 defineReplace(capitalizingString) {
@@ -12,7 +12,7 @@ defineReplace(capitalizingString) {
 
 defineTest(checkDtkVersion) {
     isEmpty(VERSION) {
-        !isEqual(DTK_MODULE_NAME, dtkcore) {
+        !contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9]*$) {
             VERSION = $${QT.dtkcore.VERSION}
         }
 
@@ -53,7 +53,7 @@ isEmpty(PREFIX){
 }
 
 isEmpty(LIB_INSTALL_DIR) {
-    isEqual(DTK_MODULE_NAME, dtkcore) {
+    contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9]*$) {
         LIB_INSTALL_DIR=$$PREFIX/lib
     } else {
         LIB_INSTALL_DIR=$${QT.dtkcore.libs}
@@ -69,7 +69,7 @@ isEmpty(TOOL_INSTALL_DIR) {
 }
 
 isEmpty(INCLUDE_INSTALL_DIR) {
-    isEqual(DTK_MODULE_NAME, dtkcore) {
+    contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9]*$) {
         INCLUDE_INSTALL_DIR = $$PREFIX/include/$$LIB_VERSION_NAME/$$DMODULE_NAME
     } else {
         INCLUDE_INSTALL_DIR = $${QT.dtkcore.includes}/../$$DMODULE_NAME

@@ -1,5 +1,5 @@
 PREFIX	:= /usr
-ARCH    := $(shell uname -m)
+ARCH    := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 
 features_files = features/dtk_module.prf \
@@ -10,7 +10,7 @@ features_files = features/dtk_module.prf \
 				features/dtk_build.prf \
 				features/dtk_translation.prf
 
-features_files_install_path = /usr/lib/$(shell uname -m)-linux-gnu/qt5/mkspecs/features
+features_files_install_path = /usr/lib/$(ARCH)-linux-gnu/qt5/mkspecs/features
 
 
 schemas_files = schemas/com.deepin.dtk.gschema.xml

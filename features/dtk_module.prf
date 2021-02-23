@@ -2,9 +2,14 @@ isEmpty(DTK_BUILD): error("Please load(dtk_build) first!")
 
 # -----------------------
 # Config Qt module
-MODULE_ID=$$DTK_MODULE_NAME
+contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9]*$) {
+    MODULE_ID=dtkcore
+} else {
+    MODULE_ID=$$DTK_MODULE_NAME
+}
+
 mod_inst_pfx=$$_PRO_FILE_PWD_
-MODULE_PRI = $$mod_inst_pfx/qt_lib_$${MODULE_ID}.pri
+MODULE_PRI = $$mod_inst_pfx/qt_lib_$${DTK_MODULE_NAME}.pri
 module_libs = $$LIB_INSTALL_DIR
 module_tools = $$TOOL_INSTALL_DIR
 MODULE_INCLUDES = $$INCLUDE_INSTALL_DIR
