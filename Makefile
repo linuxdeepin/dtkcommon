@@ -7,7 +7,8 @@ features_files = features/dtk_module.prf \
 				features/dtk_qmake.prf \
 				features/dtk_cmake.prf \
 				features/dtk_build.prf \
-				features/dtk_translation.prf
+				features/dtk_translation.prf \
+				features/dtk_testcase.prf
 
 features_files_install_path = /usr/lib/$(ARCH)-linux-gnu/qt5/mkspecs/features
 
@@ -44,6 +45,7 @@ uninstall:
 	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_cmake.prf
 	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_build.prf
 	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_translation.prf
+	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_testcase.prf
 	-rm -f $(DESTDIR)$(confs_files_install_path)/com.deepin.dtk.FileDrag.conf
 	-rm -f $(DESTDIR)$(schemas_files_install_path)/com.deepin.dtk.gschema.xml
 
