@@ -1,5 +1,4 @@
-PREFIX	:= /usr
-ARCH    := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+ARCH = $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 
 features_files = features/dtk_module.prf \
@@ -21,7 +20,7 @@ confs_files_install_path = /etc/dbus-1/system.d/
 
 all: build
 
-build: cfgs
+build:
 	@echo build for arch: $(ARCH)
 
 test: 
@@ -48,5 +47,3 @@ uninstall:
 	-rm -f $(DESTDIR)$(confs_files_install_path)/com.deepin.dtk.FileDrag.conf
 	-rm -f $(DESTDIR)$(schemas_files_install_path)/com.deepin.dtk.gschema.xml
 
-
-.PHONY: cfgs
