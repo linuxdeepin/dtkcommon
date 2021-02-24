@@ -2,11 +2,11 @@ isEmpty(DTK_BUILD): error("Please load(dtk_build) first!")
 
 # -----------------------
 # Config Qt module
-contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9]*$) {
-    MODULE_ID=dtkcore
-} else {
-    MODULE_ID=$$DTK_MODULE_NAME
+contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9._]*$) {
+    MODULE_VERSION_ID=dtkcore
 }
+
+MODULE_ID=$$DTK_MODULE_NAME
 
 mod_inst_pfx=$$_PRO_FILE_PWD_
 MODULE_PRI = $$mod_inst_pfx/qt_lib_$${DTK_MODULE_NAME}.pri
@@ -72,10 +72,10 @@ else: \
     module_master =
 
 MODULE_PRI_CONT += \
-    "QT.$${MODULE_ID}.VERSION = $${VERSION}" \
-    "QT.$${MODULE_ID}.MAJOR_VERSION = $${VER_MAJ}" \
-    "QT.$${MODULE_ID}.MINOR_VERSION = $${VER_MIN}" \
-    "QT.$${MODULE_ID}.PATCH_VERSION = $${VER_PAT}" \
+    "QT.$${MODULE_VERSION_ID}.VERSION = $${VERSION}" \
+    "QT.$${MODULE_VERSION_ID}.MAJOR_VERSION = $${VER_MAJ}" \
+    "QT.$${MODULE_VERSION_ID}.MINOR_VERSION = $${VER_MIN}" \
+    "QT.$${MODULE_VERSION_ID}.PATCH_VERSION = $${VER_PAT}" \
     "" \
     "QT.$${MODULE_ID}.name = $${MODULE_ID}" \
     "QT.$${MODULE_ID}.module = $$module_module" \

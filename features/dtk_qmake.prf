@@ -44,7 +44,7 @@ defineTest(buildQMAKEProject) {
     return(true)
 }
 
-contains(TARGET, ^dtkcore[a-z0-9]*$) {
+contains(TARGET, ^dtkcore[a-z0-9._]*$) {
     DEEPIN_OS_RELEASE_TOOL=$$_PRO_FILE_PWD_/../bin/deepin-os-release
 
     !exists($$DEEPIN_OS_RELEASE_TOOL) {

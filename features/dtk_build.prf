@@ -67,7 +67,7 @@ defineTest(updateDtkHeaderFile) {
 
 # create dtkxxx_config.h file
 defineTest(updateDtkConfigFile) {
-    contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9]*$) {
+    contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9._]*$) {
         config_content += $$quote($${LITERAL_HASH}define DTK_VERSION_MAJOR $$VER_MAJ)
         config_content += $$quote($${LITERAL_HASH}define DTK_VERSION_MINOR $$VER_MIN)
         config_content += $$quote($${LITERAL_HASH}define DTK_VERSION_PATCH $$VER_PAT)
