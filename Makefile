@@ -10,7 +10,7 @@ features_files = features/dtk_module.prf \
 				features/dtk_translation.prf \
 				features/dtk_testcase.prf
 
-features_files_install_path = /usr/lib/$(ARCH)-linux-gnu/qt5/mkspecs/features
+features_files_install_path = /usr/lib/$(ARCH)/qt5/mkspecs/features
 
 
 schemas_files = schemas/com.deepin.dtk.gschema.xml
