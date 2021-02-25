@@ -69,9 +69,5 @@ isEmpty(TOOL_INSTALL_DIR) {
 }
 
 isEmpty(INCLUDE_INSTALL_DIR) {
-    contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9._]*$) {
-        INCLUDE_INSTALL_DIR = $$PREFIX/include/$$LIB_VERSION_NAME/$$DMODULE_NAME
-    } else {
-        INCLUDE_INSTALL_DIR = $${QT.dtkcore.includes}/../$$DMODULE_NAME
-    }
+	INCLUDE_INSTALL_DIR = $$PREFIX/include/$$LIB_VERSION_NAME/$$DMODULE_NAME
 }
