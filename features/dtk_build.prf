@@ -1,8 +1,4 @@
-exists(../dtk_build_config.prf) {
-    include(../dtk_build_config.prf)
-} else {
-    load(dtk_build_config)
-}
+load(dtk_build_config)
 
 #标记已经加载了dtk_build.prf
 DTK_BUILD=1

@@ -29,11 +29,17 @@ cmake_dtkcmaketools_files = cmake/DtkTools/DtkSettingsToolsMacros.cmake \
                             cmake/DtkTools/DtkToolsConfig.cmake
 cmake_dtkcmaketools_files_install_path = /usr/lib/$(ARCH)/cmake/DtkTools
 
+dtkcommon_module_files = qt_lib_dtkcommon.pri
+dtkcommon_module_files_install_path = /usr/lib/$(ARCH)/qt5/mkspecs/modules
 
 all: build
 
 build:
 	@echo build for arch: $(ARCH)
+	@/bin/bash write_dtkcommon_module.sh
+
+
+.PHONY:clean test
 
 test: 
 	@echo "Testing schemas with glib-compile-shemas..."
@@ -47,12 +53,14 @@ install:
 	@test -d $(DESTDIR)$(cmake_dtk_files_install_path) || mkdir -p $(DESTDIR)$(cmake_dtk_files_install_path)
 	@test -d $(DESTDIR)$(cmake_dtkcmake_files_install_path) || mkdir -p $(DESTDIR)$(cmake_dtkcmake_files_install_path)
 	@test -d $(DESTDIR)$(cmake_dtkcmaketools_files_install_path) || mkdir -p $(DESTDIR)$(cmake_dtkcmaketools_files_install_path)
+	@test -d $(DESTDIR)$(dtkcommon_module_files_install_path) || mkdir -p $(DESTDIR)$(dtkcommon_module_files_install_path)
 	install -v -m 0644 $(schemas_files) $(DESTDIR)$(schemas_files_install_path)
 	install -v -m 0644 $(confs_files) $(DESTDIR)$(confs_files_install_path)
 	install -v -m 0644 $(features_files) $(DESTDIR)$(features_files_install_path)
 	install -v -m 0644 $(cmake_dtk_files) $(DESTDIR)$(cmake_dtk_files_install_path)
 	install -v -m 0644 $(cmake_dtkcmake_files) $(DESTDIR)$(cmake_dtkcmake_files_install_path)
 	install -v -m 0644 $(cmake_dtkcmaketools_files) $(DESTDIR)$(cmake_dtkcmaketools_files_install_path)
+	install -v -m 0644 $(dtkcommon_module_files) $(DESTDIR)$(dtkcommon_module_files_install_path)
 
 uninstall:
 	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_module.prf
@@ -65,4 +73,7 @@ uninstall:
 	-rm -f $(DESTDIR)$(features_files_install_path)/dtk_testcase.prf
 	-rm -f $(DESTDIR)$(confs_files_install_path)/com.deepin.dtk.FileDrag.conf
 	-rm -f $(DESTDIR)$(schemas_files_install_path)/com.deepin.dtk.gschema.xml
+	-rm -f $(DESTDIR)$(dtkcommon_module_files_install_path)/qt_lib_dtkcommon.pri
 
+clean:
+	-rm -f qt_lib_dtkcommon.pri

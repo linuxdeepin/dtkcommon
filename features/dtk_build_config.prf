@@ -12,12 +12,8 @@ defineReplace(capitalizingString) {
 
 defineTest(checkDtkVersion) {
     isEmpty(VERSION) {
-        !contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9._]*$) {
-            VERSION = $${QT.dtkcore.VERSION}
-        }
-
         # TODO: failed in windows
-        isEmpty(VERSION): VERSION = $$system(git describe --tags --abbrev=0)
+        isEmpty(VERSION): VERSION = $${QT.dtkcommon.VERSION}
         isEmpty(VERSION): VERSION = $$DTK_VERSION
         isEmpty(VERSION): return(false)
         VERSION = $$replace(VERSION, [^0-9.],)
@@ -53,11 +49,7 @@ isEmpty(PREFIX){
 }
 
 isEmpty(LIB_INSTALL_DIR) {
-    contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9._]*$) {
-        LIB_INSTALL_DIR=$$PREFIX/lib
-    } else {
-        LIB_INSTALL_DIR=$${QT.dtkcore.libs}
-    }
+    LIB_INSTALL_DIR=$${QT.dtkcommon.libs}
 }
 
 LIB_VERSION_NAME = libdtk-$${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
@@ -69,9 +61,5 @@ isEmpty(TOOL_INSTALL_DIR) {
 }
 
 isEmpty(INCLUDE_INSTALL_DIR) {
-    contains(DTK_MODULE_NAME, ^dtkcore[a-z0-9]*$) {
-        INCLUDE_INSTALL_DIR = $$PREFIX/include/$$LIB_VERSION_NAME/$$DMODULE_NAME
-    } else {
-        INCLUDE_INSTALL_DIR = $${QT.dtkcore.includes}/../$$DMODULE_NAME
-    }
+    INCLUDE_INSTALL_DIR = $$PREFIX/include/$$LIB_VERSION_NAME/$$DMODULE_NAME
 }
