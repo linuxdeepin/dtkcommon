@@ -45,7 +45,7 @@ test:
 	@echo "Testing schemas with glib-compile-shemas..."
 	@glib-compile-schemas --dry-run schemas
 
-install:
+install: all
 	@echo install for arch:$(ARCH)
 	@test -d $(DESTDIR)$(features_files_install_path) || mkdir -p $(DESTDIR)$(features_files_install_path)
 	@test -d $(DESTDIR)$(schemas_files_install_path) || mkdir -p $(DESTDIR)$(schemas_files_install_path)
