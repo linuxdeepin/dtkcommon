@@ -14,7 +14,7 @@ ARCH=$$system(dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 defineTest(checkDtkVersion) {
     isEmpty(VERSION) {
-        isEmpty(VERSION): VERSION = $${QT.dtkcommon.VERSION}
+        isEmpty(VERSION): VERSION = $$system(git describe --tags --abbrev=0)
         isEmpty(VERSION): VERSION = 5.4.5
         isEmpty(VERSION): return(false)
         VERSION = $$replace(VERSION, [^0-9.],)
