@@ -54,8 +54,20 @@ TRANSLATIONS += $$ROOT_DIR/translations/*
 
 TRANSLATIONS_DIR = $$LIB_VERSION_NAME/$$DMODULE_NAME/translations
 TRANSLATIONS_PATH = $$PREFIX/share/$$TRANSLATIONS_DIR
-DEFINES += $$upper($$DMODULE_NAME)_TRANSLATIONS_PATH=\\\"$$TRANSLATIONS_PATH\\\"
-DEFINES += $$upper($$DMODULE_NAME)_TRANSLATIONS_DIR=\\\"$$TRANSLATIONS_DIR\\\"
+
+BASE_DMODULE_NAME=""
+DIRTY=false
+for (char_val, $$list($$split(DMODULE_NAME,))) {
+    !contains(char_val, ^[0-9._]*$) {
+        contains(DIRTY,false):BASE_DMODULE_NAME=$$BASE_DMODULE_NAME$$char_val
+    } else {
+        # 此时不再获取后续的字符
+        DIRTY=true
+    }
+}
+
+DEFINES += $$upper($$BASE_DMODULE_NAME)_TRANSLATIONS_PATH=\\\"$$TRANSLATIONS_PATH\\\"
+DEFINES += $$upper($$BASE_DMODULE_NAME)_TRANSLATIONS_DIR=\\\"$$TRANSLATIONS_DIR\\\"
 
 dtk_translations.path = $$TRANSLATIONS_PATH
 dtk_translations.files = $$ROOT_DIR/translations/*.qm
