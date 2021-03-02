@@ -9,8 +9,13 @@ Homepage: http://www.deepin.org/
 Package: libdtkcommon
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-#Conflicts: libdtkcore5 (<< 5.5), libdtkgui5 (<< 5.5)
-#Breaks: libdtkcore5 (<< 5.5), libdtkgui5 (<< 5.5)
+Description: dtk common files
+ dtkcommon contains a collection of common files(schemas, configs) for
+ settings shared by dtk libraries.
+
+Package: libdtkcommon-dev
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libdtkcommon( =${binary:Version})
 Description: dtk common files
  dtkcommon contains a collection of common files(schemas, configs) for
  settings shared by dtk libraries.

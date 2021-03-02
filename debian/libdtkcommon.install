@@ -1,0 +1,2 @@
+etc/dbus-1/system.d/*
+usr/share/glib-2.0/schemas/*
