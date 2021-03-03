@@ -52,11 +52,12 @@ contains(TARGET, ^dtkcore[a-z0-9._]*$) {
         !buildQMAKEProject($$tools_dir): error(Failed on build deepin-os-release)
     }
 } else {
-    isEmpty(QT.dtkcommon.tools): error(dtkcommon first)
-    DEEPIN_OS_RELEASE_TOOL=$${QT.dtkcommon.tools}/DCore/bin/deepin-os-release
+    # 有待优化
+    isEmpty(QT.dtkcore.tools): error(QT += dtkcore first)
+    DEEPIN_OS_RELEASE_TOOL=$${QT.dtkcore.tools}/deepin-os-release
 }
 
-!exists($$DEEPIN_OS_RELEASE_TOOL): error(\"$$DEEPIN_OS_RELEASE_TOOL\" is not exists. Install \"dtkcommon\" first)
+!exists($$DEEPIN_OS_RELEASE_TOOL): error(\"$$DEEPIN_OS_RELEASE_TOOL\" is not exists. Install \"dtkcore-bin\" first)
 
 defineReplace(formatString) {
     string = $$1
