@@ -15,7 +15,7 @@ ARCH=$$system(dpkg-architecture -qDEB_HOST_MULTIARCH)
 defineTest(checkDtkVersion) {
     isEmpty(VERSION) {
         isEmpty(VERSION): VERSION = $$system(git describe --tags --abbrev=0)
-        isEmpty(VERSION): VERSION = 5.4.5
+        isEmpty(VERSION): VERSION = 5.5.0
         isEmpty(VERSION): return(false)
         VERSION = $$replace(VERSION, [^0-9.],)
     }
@@ -24,7 +24,6 @@ defineTest(checkDtkVersion) {
 }
 
 !checkDtkVersion():error("check dtk version failed")
-message("build version : $$VERSION")
 
 ver_list = $$split(VERSION, .)
 
@@ -33,16 +32,21 @@ isEmpty(VER_MAJ) {
 }
 isEmpty(VER_MIN) {
     VER_MIN = $$member(ver_list, 1, 1)
-    isEmpty(VER_MIN):VER_MIN = 0
+    isEmpty(VER_MIN): VER_MIN = 0
+    !isEmpty(VER_MIN): VER_MIN = $$format_number($$VER_MIN, ibase=10)
 }
 isEmpty(VER_PAT) {
     VER_PAT = $$member(ver_list, 2, 2)
-    isEmpty(VER_PAT):VER_PAT = 0
+    isEmpty(VER_PAT): VER_PAT = 0
+    !isEmpty(VER_PAT): VER_PAT = $$format_number($$VER_PAT, ibase=10)
 }
 isEmpty(VER_BUI) {
     VER_BUI = $$member(ver_list, 3, 3)
-    isEmpty(VER_BUI):VER_BUI = 0
+    isEmpty(VER_BUI): VER_BUI = 0
+    !isEmpty(VER_BUI): VER_BUI = $$format_number($$VER_BUI, ibase=10)
 }
+
+message("build version : $$VERSION ($${VER_MAJ}.$${VER_MIN}.$${VER_PAT}.$${VER_BUI})")
 
 mod_inst_pfx=$$_PRO_FILE_PWD_
 MODULE_PRI = $$mod_inst_pfx/qt_lib_dtkcommon.pri

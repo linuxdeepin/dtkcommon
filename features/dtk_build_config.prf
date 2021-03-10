@@ -29,21 +29,23 @@ message("build dtk with version $$VERSION")
 ver_list = $$split(VERSION, .)
 
 isEmpty(VER_MAJ) {
-    VER_MAJ = $$format_number($$first(ver_list), ibase=10)
+    VER_MAJ = $$first(ver_list)
 }
 isEmpty(VER_MIN) {
-    VER_MIN = $$format_number($$member(ver_list, 1, 1), ibase=10)
-    isEmpty(VER_MIN):VER_MIN = 0
+    VER_MIN = $$member(ver_list, 1, 1)
+    isEmpty(VER_MIN): VER_MIN = 0
+    !isEmpty(VER_MIN): VER_MIN = $$format_number($$VER_MIN, ibase=10)
 }
 isEmpty(VER_PAT) {
-    VER_PAT = $$format_number($$member(ver_list, 2, 2), ibase=10)
-    isEmpty(VER_PAT):VER_PAT = 0
+    VER_PAT = $$member(ver_list, 2, 2)
+    isEmpty(VER_PAT): VER_PAT = 0
+    !isEmpty(VER_PAT): VER_PAT = $$format_number($$VER_PAT, ibase=10)
 }
 isEmpty(VER_BUI) {
     VER_BUI = $$member(ver_list, 3, 3)
+    isEmpty(VER_BUI): VER_BUI = 0
     # fix VER_BUI=009, invalid digit "9" in octal constant error
-    VER_BUI = $$format_number($$VER_BUI, ibase=10)
-    isEmpty(VER_BUI):VER_BUI = 0
+    !isEmpty(VER_BUI): VER_BUI = $$format_number($$VER_BUI, ibase=10)
 }
 
 isEmpty(PREFIX){
@@ -55,6 +57,8 @@ isEmpty(LIB_INSTALL_DIR) {
 }
 
 LIB_VERSION_NAME = libdtk-$${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
+message("library version name $$LIB_VERSION_NAME, VER_BUI is $$VER_BUI")
+
 MODULE_NAME = $$upper($$member($$list($$split(DTK_MODULE_NAME,)), 3, 3))$$join($$list($$member($$list($$split(DTK_MODULE_NAME,)), 4, -1)))
 DMODULE_NAME = D$${MODULE_NAME}
 
