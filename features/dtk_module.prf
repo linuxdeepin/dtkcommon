@@ -118,6 +118,7 @@ PKG_MODULE_DEPENDS = $$unique(PKG_MODULE_DEPENDS)
 
 # -----------------------
 # Config pkg-config
+QMAKE_PKGCONFIG_FILE = $$lower($$MODULE_ID)
 QMAKE_PKGCONFIG_VERSION = $$VERSION
 QMAKE_PKGCONFIG_DESTDIR = pkgconfig
 QMAKE_PKGCONFIG_NAME = $$upper($$MODULE_ID)
