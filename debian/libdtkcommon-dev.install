@@ -1,5 +1,3 @@
-usr/lib/*/*/DtkTools/*.cmake
-usr/lib/*/cmake/DtkCMake/*.cmake
 usr/lib/cmake/Dtk/DtkConfig.cmake
 usr/lib/*/*/mkspecs/features/*
 usr/lib/*/*/mkspecs/modules/*

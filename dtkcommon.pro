@@ -95,13 +95,6 @@ prf.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/features
 cmake_dtk.files = cmake/Dtk/DtkConfig.cmake
 cmake_dtk.path = $$PREFIX/lib/$(ARCH)/cmake/Dtk
 
-cmake_dtkcmake.files = cmake/DtkCMake/DtkCMakeConfig.cmake
-cmake_dtkcmake.path = $$PREFIX/lib/$$ARCH/cmake/DtkCMake
-
-cmake_dtkcmaketools.files = cmake/DtkTools/DtkSettingsToolsMacros.cmake \
-                            cmake/DtkTools/DtkToolsConfig.cmake
-cmake_dtkcmaketools.path = $$PREFIX/lib/$$ARCH/cmake/DtkTools
-
 dtkcommon_module.files = $$MODULE_PRI
 dtkcommon_module.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/modules
 
@@ -111,4 +104,4 @@ conf.path = /etc/dbus-1/system.d
 schemas.files = schemas/com.deepin.dtk.gschema.xml
 schemas.path = $$PREFIX/share/glib-2.0/schemas
 
-INSTALLS += prf cmake_dtk cmake_dtkcmake cmake_dtkcmaketools dtkcommon_module conf schemas
+INSTALLS += prf cmake_dtk dtkcommon_module conf schemas
