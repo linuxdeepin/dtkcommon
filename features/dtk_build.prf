@@ -8,30 +8,27 @@ CONFIG += c++11 create_pc create_prl no_install_prl
 CONFIG += no_keywords
 
 # 获取去掉版本号的模块名
-BASE_DTK_MODULE_NAME=""
-DIRTY=false
-for (char_val, $$list($$split(DTK_MODULE_NAME,))) {
-    !contains(char_val, ^[0-9._]*$) {
-        contains(DIRTY,false):BASE_DTK_MODULE_NAME=$$BASE_DTK_MODULE_NAME$$char_val
-    } else {
-        # 此时不再获取后续的字符
-        DIRTY=true
+defineReplace(baseModuleName) {
+    BASE_NAME=""
+    DIRTY=false
+    NAME = $$1
+    for (char_val, $$list($$split(NAME,))) {
+        !contains(char_val, ^[0-9._]*$) {
+            contains(DIRTY,false):BASE_NAME=$$BASE_NAME$$char_val
+        } else {
+            # 此时不再获取后续的字符
+            DIRTY=true
+        }
     }
+    return ($$BASE_NAME)
 }
 
-BASE_MODULE_NAME=""
-DIRTY=false
-for (char_val, $$list($$split(MODULE_NAME,))) {
-    !contains(char_val, ^[0-9._]*$) {
-        contains(DIRTY,false):BASE_MODULE_NAME=$$BASE_MODULE_NAME$$char_val
-    } else {
-        # 此时不再获取后续的字符
-        DIRTY=true
-    }
-}
+# 获取去掉版本号的模块名
+BASE_DTK_MODULE_NAME = $$baseModuleName($$DTK_MODULE_NAME)
+BASE_MODULE_NAME = $$baseModuleName($$MODULE_NAME)
 
 DEFINES += QT_MESSAGELOGCONTEXT
-DEFINES += LIB$$upper($$DTK_MODULE_NAME)_LIBRARY
+DEFINES += LIB$$upper($$BASE_DTK_MODULE_NAME)_LIBRARY
 DEFINES += DTK_LIB_DIR_NAME=\\\"$$LIB_VERSION_NAME\\\"
 
 isEmpty(target.path): target.path = $$LIB_INSTALL_DIR
