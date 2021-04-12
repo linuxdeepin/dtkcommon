@@ -10,8 +10,6 @@ isEmpty(PREFIX){
     PREFIX = /usr
 }
 
-ARCH=$$system(dpkg-architecture -qDEB_HOST_MULTIARCH)
-
 defineTest(checkDtkVersion) {
     isEmpty(VERSION) {
         isEmpty(VERSION): VERSION = $$system(git describe --tags --abbrev=0)
