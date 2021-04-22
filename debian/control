@@ -12,8 +12,7 @@ Depends: ${misc:Depends}, ${shlibs:Depends}
 Conflicts: libdtkcore5(<< 5.4.10), libdtkgui5(<< 5.4.10)
 Replaces: libdtkcore5(<< 5.4.10), libdtkgui5(<< 5.4.10)
 Description: dtk common files
- dtkcommon contains a collection of common files(schemas, configs) for
- settings shared by dtk libraries.
+ Used to store public configuration files
 
 Package: libdtkcommon-dev
 Architecture: any
@@ -21,5 +20,4 @@ Conflicts: libdtkcore-dev(<< 5.4.10)
 Replaces: libdtkcore-dev(<< 5.4.10)
 Depends: ${misc:Depends}, ${shlibs:Depends}, libdtkcommon( =${binary:Version})
 Description: dtk common files
- dtkcommon contains a collection of common files(schemas, configs) for
- settings shared by dtk libraries.
+ Used to store public build files
