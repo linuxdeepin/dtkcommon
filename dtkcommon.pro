@@ -96,10 +96,10 @@ cmake_dtk.path = $$PREFIX/lib/$(ARCH)/cmake/Dtk
 dtkcommon_module.files = $$MODULE_PRI
 dtkcommon_module.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/modules
 
-conf.files = confs/com.deepin.dtk.FileDrag.conf
-conf.path = /etc/dbus-1/system.d
+#conf.files = confs/com.deepin.dtk.FileDrag.conf
+#conf.path = /etc/dbus-1/system.d
 
 schemas.files = schemas/com.deepin.dtk.gschema.xml
 schemas.path = $$PREFIX/share/glib-2.0/schemas
 
-INSTALLS += prf cmake_dtk dtkcommon_module conf schemas
+INSTALLS += prf cmake_dtk dtkcommon_module schemas #conf
