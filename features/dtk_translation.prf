@@ -29,7 +29,7 @@ isEmpty(DTK_NO_TRANSLATION) {
         #        <file>dtkwidget_ast.qm</file>
         #    </qresource>
         #</RCC>
-        QRC_PATH = $$ROOT_DIR/translations/$${BASENAME}_translations.qrc
+        QRC_PATH = $$ROOT_DIR/translations/$${TARGET}_translations.qrc
         message ("Create static translations file $${QRC_PATH}")
 
         QRC_CONTENT = "<RCC>"
