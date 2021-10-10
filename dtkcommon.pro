@@ -87,7 +87,8 @@ prf.files = features/dtk_lib.prf \
              features/dtk_cmake.prf \
              features/dtk_qmake.prf \
              features/dtk_multiversion.prf \
-             features/dtk_install_multiversion.prf
+             features/dtk_install_multiversion.prf \
+             features/dtk_install_dconfig.prf
 
 prf.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/features
 
