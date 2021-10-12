@@ -93,7 +93,9 @@ prf.files = features/dtk_lib.prf \
 prf.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/features
 
 
-cmake_dtk.files = cmake/Dtk/DtkConfig.cmake
+cmake_dtk.files = cmake/Dtk/DtkConfig.cmake \
+                    cmake/Dtk/DtkInstallDConfigConfig.cmake
+
 cmake_dtk.path = $$PREFIX/lib/$(ARCH)/cmake/Dtk
 
 dtkcommon_module.files = $$MODULE_PRI
