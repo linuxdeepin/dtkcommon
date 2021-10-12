@@ -6,10 +6,6 @@ CONFIG -= qt
 SOURCES += \
         main.cpp
 
-isEmpty(PREFIX){
-    PREFIX = /usr
-}
-
 defineTest(checkDtkVersion) {
     isEmpty(VERSION) {
         isEmpty(VERSION): VERSION = $$system(git describe --tags --abbrev=0)
@@ -19,6 +15,20 @@ defineTest(checkDtkVersion) {
     }
     export(VERSION)
     return(true)
+}
+
+defineReplace(getQtMacroFromQMake) {
+    MACRO = $$1
+    var = $${system($${QMAKE_QMAKE} -query $$MACRO)}
+
+    return ($$var)
+}
+
+isEmpty(PREFIX){
+    PREFIX = $${getQtMacroFromQMake(QT_HOST_PREFIX)}
+    isEmpty(PREFIX) {
+    PREFIX = /usr
+    }
 }
 
 !checkDtkVersion():error("check dtk version failed")
@@ -46,10 +56,17 @@ isEmpty(VER_BUI) {
 
 message("build version : $$VERSION ($${VER_MAJ}.$${VER_MIN}.$${VER_PAT}.$${VER_BUI})")
 
+ARCH_INSTALL_DATA = $${getQtMacroFromQMake(QT_INSTALL_ARCHDATA)}
+INSTALL_LIBS = $${getQtMacroFromQMake(QT_INSTALL_LIBS)}
+
 mod_inst_pfx=$$_PRO_FILE_PWD_
 MODULE_PRI = $$mod_inst_pfx/qt_lib_dtkcommon.pri
-module_libs = $$PREFIX/lib/$$ARCH
-module_tools = $$PREFIX/lib/$$ARCH/libdtk-$$VERSION
+
+if (isEmpty(ARCH)):  module_libs = $${INSTALL_LIBS}
+else: module_libs = $$PREFIX/lib/$$ARCH
+if (isEmpty(ARCH)): module_tools = $${INSTALL_LIBS}/libdtk-$$VERSION
+else: module_tools = $$PREFIX/lib/$$ARCH/libdtk-$$VERSION
+
 MODULE_INCLUDES = $$PREFIX/include/libdtk-$$VERSION
 
 # Create a module .pri file
@@ -90,7 +107,11 @@ prf.files = features/dtk_lib.prf \
              features/dtk_install_multiversion.prf \
              features/dtk_install_dconfig.prf
 
-prf.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/features
+isEmpty(ARCH_INSTALL_DATA) {
+    prf.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/features
+} else {
+    prf.path = $${ARCH_INSTALL_DATA}/mkspecs/features
+}
 
 
 cmake_dtk.files = cmake/Dtk/DtkConfig.cmake \
@@ -99,7 +120,12 @@ cmake_dtk.files = cmake/Dtk/DtkConfig.cmake \
 cmake_dtk.path = $$PREFIX/lib/$(ARCH)/cmake/Dtk
 
 dtkcommon_module.files = $$MODULE_PRI
-dtkcommon_module.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/modules
+
+isEmpty(ARCH_INSTALL_DATA) {
+    dtkcommon_module.path = $$PREFIX/lib/$$ARCH/qt5/mkspecs/modules
+} else {
+    dtkcommon_module.path = $${ARCH_INSTALL_DATA}/mkspecs/modules
+}
 
 #conf.files = confs/com.deepin.dtk.FileDrag.conf
 #conf.path = /etc/dbus-1/system.d

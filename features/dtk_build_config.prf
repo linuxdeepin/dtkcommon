@@ -23,6 +23,13 @@ defineTest(checkDtkVersion) {
     return(true)
 }
 
+defineReplace(getQtMacroFromQMake) {
+    MACRO = $$1
+    var = $${system($${QMAKE_QMAKE} -query $$MACRO)}
+
+    return ($$var)
+}
+
 !checkDtkVersion():error("check dtk version failed")
 
 message("build dtk with version $$VERSION")
@@ -49,7 +56,7 @@ isEmpty(VER_BUI) {
 }
 
 isEmpty(PREFIX){
-    PREFIX = /usr
+    PREFIX = $${getQtMacroFromQMake(QT_HOST_PREFIX)}
 }
 
 isEmpty(LIB_INSTALL_DIR) {
