@@ -34,6 +34,10 @@ DEFINES += DTK_LIB_DIR_NAME=\\\"$$LIB_VERSION_NAME\\\"
 isEmpty(target.path): target.path = $$LIB_INSTALL_DIR
 isEmpty(includes.path): includes.path = $$quote($$INCLUDE_INSTALL_DIR)
 
+# 增加安全编译参数
+QMAKE_CFLAGS += -fstack-protector-strong -D_FORTITY_SOURCE=1 -z noexecstack -pie -fPIC -z lazy
+QMAKE_CXXFLAGS += -fstack-protector-strong -D_FORTITY_SOURCE=1 -z noexecstack -pie -fPIC -z lazy
+
 !isEmpty(DTK_STATIC_LIB) {
     DEFINES += DTK_STATIC_LIB
     CONFIG += staticlib
