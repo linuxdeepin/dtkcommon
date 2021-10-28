@@ -13,6 +13,7 @@ defineReplace(getDSGDataDir) {
 # base        - used to get subpath, if it's empty, only copy files, and ignore it's subpath structure.
 # appid       - working for the app, if it's empty, depending on `TEMPLATE`.
 # commonid    - working for common, if it's empyt, depending on `TEMPLATE`.
+# use_opt_dir - using uos standard to install destination directory.
 #
 # e.g:
 # dconfig_example.files += \
@@ -31,7 +32,11 @@ for(metaitem, DCONFIG_META_FILES) {
     isEmpty($${metaitem}.appid) {
         isEmpty($${metaitem}.commonid) {
             equals(TEMPLATE, app) {
-                eval(dconfig_meta_$${metaitem}.path = /opt/apps/$$TARGET/files/schemas/configs)
+                !isEmpty($${metaitem}.use_opt_dir) {
+                    eval(dconfig_meta_$${metaitem}.path = /opt/apps/$$TARGET/files/schemas/configs)
+                 } else {
+                    eval(dconfig_meta_$${metaitem}.path = /usr/share/dsg/apps/$$TARGET/configs)
+                 }
             } else {
                 eval(dconfig_meta_$${metaitem}.path = $$getDSGDataDir()/configs/)
             }
@@ -39,7 +44,11 @@ for(metaitem, DCONFIG_META_FILES) {
             eval(dconfig_meta_$${metaitem}.path = $$getDSGDataDir()/configs/)
         }
     } else {
-        eval(dconfig_meta_$${metaitem}.path = /opt/apps/$$eval($${overrideitem}.appid/files/schemas/configs))
+        !isEmpty($${metaitem}.use_opt_dir) {
+            eval(dconfig_meta_$${metaitem}.path = /opt/apps/$$eval($${overrideitem}.appid/files/schemas/configs))
+        } else {
+            eval(dconfig_meta_$${metaitem}.path = /usr/share/dsg/apps/$$eval($${overrideitem}.appid/configs))
+        }
     }
     INSTALLS += dconfig_meta_$${metaitem}
 }

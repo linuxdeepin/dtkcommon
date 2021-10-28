@@ -16,6 +16,7 @@ endfunction()
 
 # deploy some `meta` 's configure.
 #
+# option USE_OPT_DIR   - using uos standard to install destination directory.
 # FILES       - deployed files.
 # BASE        - used to get subpath, if it's empty, only copy files, and ignore it's subpath structure.
 # APPID       - working for the app.
@@ -25,7 +26,7 @@ endfunction()
 # dconfig_meta_files(APPID dconfigexample BASE ./configs FILES ./configs/example.json ./configs/a/example.json)
 #
 function(DCONFIG_META_FILES)
-    set(options)
+    set(options USE_OPT_DIR)
     set(oneValueArgs BASE APPID COMMONID)
     set(multiValueArgs FILES)
 
@@ -44,7 +45,11 @@ function(DCONFIG_META_FILES)
         endif()
 
         if (DEFINED METAITEM_APPID)
-            install(FILES "${_current_FILE}" DESTINATION /opt/apps/${METAITEM_APPID}/files/schemas/configs/${SUBPATH})
+            if (${METAITEM_USE_OPT_DIR} STREQUAL "TRUE")
+                install(FILES "${_current_FILE}" DESTINATION /opt/apps/${METAITEM_APPID}/files/schemas/configs/${SUBPATH})
+            else()
+                install(FILES "${_current_FILE}" DESTINATION /usr/share/dsg/apps/${METAITEM_APPID}/configs/${SUBPATH})
+            endif()
         elseif (DEFINED METAITEM_COMMONID)
             install(FILES ${_current_FILE} DESTINATION ${DSG_DATA_DIR}/configs/${SUBPATH})
         else()
