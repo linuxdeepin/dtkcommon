@@ -7,7 +7,7 @@ include(CMakeParseArguments)
 function(GET_SUBPATH FILE BASE SUBPATH)
     get_filename_component(BASE_FILE_PATH ${BASE} REALPATH)
     get_filename_component(FILE_PATH ${FILE} REALPATH)
-    string(REGEX REPLACE ${BASE_FILE_PATH} "" SUBPATH_FILE_NAME ${FILE_PATH})
+    string(REPLACE ${BASE_FILE_PATH} "" SUBPATH_FILE_NAME ${FILE_PATH})
     get_filename_component(SUBPATH_PATH ${SUBPATH_FILE_NAME} DIRECTORY)
 
     set(${SUBPATH} ${SUBPATH_PATH} PARENT_SCOPE)
