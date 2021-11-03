@@ -35,8 +35,9 @@ isEmpty(target.path): target.path = $$LIB_INSTALL_DIR
 isEmpty(includes.path): includes.path = $$quote($$INCLUDE_INSTALL_DIR)
 
 # 增加安全编译参数
-QMAKE_CFLAGS += -fstack-protector-strong -D_FORTITY_SOURCE=1 -z noexecstack -pie -fPIC -z lazy
-QMAKE_CXXFLAGS += -fstack-protector-strong -D_FORTITY_SOURCE=1 -z noexecstack -pie -fPIC -z lazy
+QMAKE_LFLAGS += -z noexecstack -pie -z relro -z now
+QMAKE_CFLAGS += -fstack-protector-all -D_FORTITY_SOURCE=1
+QMAKE_CXXFLAGS += -fstack-protector-all -D_FORTITY_SOURCE=1
 
 !isEmpty(DTK_STATIC_LIB) {
     DEFINES += DTK_STATIC_LIB
