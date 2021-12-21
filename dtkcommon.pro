@@ -1,10 +1,6 @@
-TEMPLATE = app
-CONFIG += console c++11
+TEMPLATE = aux #Makefile to build nothing.
 CONFIG -= app_bundle
 CONFIG -= qt
-
-SOURCES += \
-        main.cpp
 
 defineTest(checkDtkVersion) {
     isEmpty(VERSION) {
@@ -112,7 +108,6 @@ isEmpty(ARCH_INSTALL_DATA) {
 } else {
     prf.path = $${ARCH_INSTALL_DATA}/mkspecs/features
 }
-
 
 cmake_dtk.files = cmake/Dtk/DtkConfig.cmake \
                     cmake/Dtk/DtkInstallDConfigConfig.cmake
