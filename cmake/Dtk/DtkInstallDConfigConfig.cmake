@@ -13,10 +13,13 @@ function(GET_SUBPATH FILE BASE SUBPATH)
     set(${SUBPATH} ${SUBPATH_PATH} PARENT_SCOPE)
 endfunction()
 
+if(NOT DEFINED DSG_DATA_DIR)
+    set(DSG_DATA_DIR ${CMAKE_INSTALL_PREFIX}/share/dsg)
+endif()
 
+add_definitions(-DDSG_DATA_DIR=${DSG_DATA_DIR})
 # deploy some `meta` 's configure.
 #
-# option USE_OPT_DIR   - using uos standard to install destination directory.
 # FILES       - deployed files.
 # BASE        - used to get subpath, if it's empty, only copy files, and ignore it's subpath structure.
 # APPID       - working for the app.
@@ -26,17 +29,10 @@ endfunction()
 # dconfig_meta_files(APPID dconfigexample BASE ./configs FILES ./configs/example.json ./configs/a/example.json)
 #
 function(DCONFIG_META_FILES)
-    set(options USE_OPT_DIR)
     set(oneValueArgs BASE APPID COMMONID)
     set(multiValueArgs FILES)
 
     cmake_parse_arguments(METAITEM "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
-
-    if(DEFINED ENV{DSG_DATA_DIR})
-        set(DSG_DATA_DIR $ENV{DSG_DATA_DIR})
-    else()
-        set(DSG_DATA_DIR "/usr/share/dsg")
-    endif()
 
     foreach(_current_FILE ${METAITEM_FILES})
         set(SUBPATH "")
@@ -45,11 +41,7 @@ function(DCONFIG_META_FILES)
         endif()
 
         if (DEFINED METAITEM_APPID)
-            if (${METAITEM_USE_OPT_DIR} STREQUAL "TRUE")
-                install(FILES "${_current_FILE}" DESTINATION /opt/apps/${METAITEM_APPID}/files/schemas/configs/${SUBPATH})
-            else()
-                install(FILES "${_current_FILE}" DESTINATION /usr/share/dsg/apps/${METAITEM_APPID}/configs/${SUBPATH})
-            endif()
+            install(FILES "${_current_FILE}" DESTINATION ${DSG_DATA_DIR}/configs/${METAITEM_APPID}/${SUBPATH})
         elseif (DEFINED METAITEM_COMMONID)
             install(FILES ${_current_FILE} DESTINATION ${DSG_DATA_DIR}/configs/${SUBPATH})
         else()
@@ -80,12 +72,6 @@ function(DCONFIG_OVERRIDE_FILES)
 
     if (NOT DEFINED OVERRIDEITEM_META_NAME)
         message(FATAL_ERROR "Please set meta_name for the override configuration." ${FILES})
-    endif()
-
-    if(DEFINED ENV{DSG_DATA_DIR})
-        set(DSG_DATA_DIR $ENV{DSG_DATA_DIR})
-    else()
-        set(DSG_DATA_DIR "/usr/share/dsg")
     endif()
 
     foreach(_current_FILE ${OVERRIDEITEM_FILES})
