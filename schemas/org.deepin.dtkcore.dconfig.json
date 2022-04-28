@@ -1,0 +1,56 @@
+{
+  "magic": "dsg.config.meta",
+  "version": "1.0",
+  "contents": {
+      "log-level": {
+          "value": "default",
+          "serial": 0,
+          "flags": [""],
+          "name": "Configure the log level of the application",
+          "name[zh_CN]": "配置应用的日志等级",
+          "description": "Configure the log level of the application",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "log-path": {
+          "value": "default",
+          "serial": 0,
+          "flags": [""],
+          "name": "Configure the log path of the application",
+          "name[zh_CN]": "配置应用的日志路径",
+          "description": "Configure the log path of the application",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "rolling-number": {
+          "value": "default",
+          "serial": 0,
+          "flags": [""],
+          "name": "Rolling number of log files",
+          "name[zh_CN]": "日志文件的数量",
+          "description": "Control the number of log files within this range",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "date-pattern": {
+          "value": "default",
+          "serial": 0,
+          "flags": [""],
+          "name": "Log write policy",
+          "name[zh_CN]": "日志的写入策略",
+          "description": "Time period for creating log files",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "log-format": {
+          "value": "default",
+          "serial": 0,
+          "flags": [""],
+          "name": "Display log according to format string",
+          "name[zh_CN]": "根据格式字符格式化日志输出",
+          "description": "Configure the display format of the log",
+          "permissions": "readwrite",
+          "visibility": "private"
+      }
+  }
+}
