@@ -1,0 +1,116 @@
+{
+  "magic": "dsg.config.meta",
+  "version": "1.0",
+  "contents": {
+      "ItemBackground": {
+          "value": "0,0,0,8",
+          "serial": 0,
+          "flags": [""],
+          "name": "The background color of the list item",
+          "name[zh_CN]": "列表项的背景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "TextTitle": {
+          "value": "#001A2E",
+          "serial": 0,
+          "flags": [""],
+          "name": "Color of title text",
+          "name[zh_CN]": "标题型文本的颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "TextTips": {
+          "value": "#526A7F",
+          "serial": 0,
+          "flags": [""],
+          "name": "Color of suggestive text",
+          "name[zh_CN]": "提示性文本的颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "TextWarning": {
+          "value": "#FF5736",
+          "serial": 0,
+          "flags": [""],
+          "name": "Text color for warning type",
+          "name[zh_CN]": "警告类型的文本颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "TextLively": {
+          "value": "#ffffff",
+          "serial": 0,
+          "flags": [""],
+          "name": "Active text color",
+          "name[zh_CN]": "活跃式文本颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "LightLively": {
+          "value": "#0081FF",
+          "serial": 0,
+          "flags": [""],
+          "name": "Recommended button bright color in background color",
+          "name[zh_CN]": "Recommend button 背景色中的亮色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "DarkLively": {
+          "value": "#0081FF",
+          "serial": 0,
+          "flags": [""],
+          "name": "Recommend button dark color in background color",
+          "name[zh_CN]": "Recommend button 背景色中的暗色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "FrameBorder": {
+          "value": "0,0,0,13",
+          "serial": 0,
+          "flags": [""],
+          "name": "Control border color",
+          "name[zh_CN]": "控件边框颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "PlaceholderText": {
+          "value": "85,85,85,102",
+          "serial": 0,
+          "flags": [""],
+          "name": "Text color of placeholder type",
+          "name[zh_CN]": "占位类型的文本颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "FrameShadowBorder": {
+          "value": "0,0,0,26",
+          "serial": 0,
+          "flags": [""],
+          "name": "Border color used to overlay shadows",
+          "name[zh_CN]": "用于跟阴影叠加的边框颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "ObviousBackground": {
+          "value": "0,0,0,26",
+          "serial": 0,
+          "flags": [""],
+          "name": "Obvious background color",
+          "name[zh_CN]": "明显的背景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      }
+  }
+}

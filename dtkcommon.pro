@@ -131,7 +131,16 @@ schemas.path = $$PREFIX/share/glib-2.0/schemas
 log_dconfig.files += $$PWD/schemas/org.deepin.dtkcore.dconfig.json
 log_dconfig.base = $$PWD/schemas
 log_dconfig.commonid = true
-DCONFIG_META_FILES += log_dconfig
+
+palette_dconfig.files +=                                \
+    $$PWD/schemas/org.deepin.dtkgui.light.dpalette.json \
+    $$PWD/schemas/org.deepin.dtkgui.dark.dpalette.json  \
+    $$PWD/schemas/org.deepin.dtkgui.light.qpalette.json \
+    $$PWD/schemas/org.deepin.dtkgui.dark.qpalette.json
+palette_dconfig.base = $$PWD/schemas
+palette_dconfig.commonid = true
+
+DCONFIG_META_FILES += log_dconfig palette_dconfig
 load(dtk_install_dconfig)
 
 INSTALLS += prf cmake_dtk dtkcommon_module schemas #conf

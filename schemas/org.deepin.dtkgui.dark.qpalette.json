@@ -1,0 +1,206 @@
+{
+  "magic": "dsg.config.meta",
+  "version": "1.0",
+  "contents": {
+      "WindowText": {
+          "value": "#c0c6d4",
+          "serial": 0,
+          "flags": [""],
+          "name": "A general foreground color",
+          "name[zh_CN]": "一般的前景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Button": {
+          "value": "#444444",
+          "serial": 0,
+          "flags": [""],
+          "name": "The general Button background color",
+          "name[zh_CN]": "普通按钮的背景颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Light": {
+          "value": "#484848",
+          "serial": 0,
+          "flags": [""],
+          "name": "Lighter than Button color",
+          "name[zh_CN]": "比Button更亮的颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Midlight": {
+          "value": "#474747",
+          "serial": 0,
+          "flags": [""],
+          "name": "Color between Button and Light",
+          "name[zh_CN]": "介于Button和Light之间的颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Dark": {
+          "value": "#414141",
+          "serial": 0,
+          "flags": [""],
+          "name": "Color Darker than Button",
+          "name[zh_CN]": "比Button更深的颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Mid": {
+          "value": "#434343",
+          "serial": 0,
+          "flags": [""],
+          "name": "Color between Button and Dark",
+          "name[zh_CN]": "介于Button和Drak之间的颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Text": {
+          "value": "#c0c6d4",
+          "serial": 0,
+          "flags": [""],
+          "name": "The foreground color used with Base",
+          "name[zh_CN]": "与Base一起使用的前景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "BrightText": {
+          "value": "#ffffff",
+          "serial": 0,
+          "flags": [""],
+          "name": "Lighter text color than windowtext",
+          "name[zh_CN]": "比WindowText更浅的文本颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "ButtonText": {
+          "value": "#c0c6d4",
+          "serial": 0,
+          "flags": [""],
+          "name": "A foreground color used with the Button color.",
+          "name[zh_CN]": "与Button颜色一起使用的前景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Base": {
+          "value": "#282828",
+          "serial": 0,
+          "flags": [""],
+          "name": "Background color for text entry widgets",
+          "name[zh_CN]": "文本输入背景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Window": {
+          "value": "#252525",
+          "serial": 0,
+          "flags": [""],
+          "name": "A general background color",
+          "name[zh_CN]": "一般的背景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Shadow": {
+          "value": "0,0,0,13",
+          "serial": 0,
+          "flags": [""],
+          "name": "Shadow, a very dark color",
+          "name[zh_CN]": "非常深的阴影颜色",
+          "description": "By default, the Shadow color is Qt::black",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Highlight": {
+          "value": "#0081ff",
+          "serial": 0,
+          "flags": [""],
+          "name": "Indicate a selected item or the current item",
+          "name[zh_CN]": "指示选中项的颜色",
+          "description": "By default, the Highlight color is Qt::darkBlue",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "HighlightedText": {
+          "value": "#F1F6FF",
+          "serial": 0,
+          "flags": [""],
+          "name": "A text color that contrasts with Highlight",
+          "name[zh_CN]": "与高光形成对比的文本颜色",
+          "description": "By default, the HighlightedText color is Qt::white",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "Link": {
+          "value": "#0082fa",
+          "serial": 0,
+          "flags": [""],
+          "name": "A text color used for unvisited hyperlinks",
+          "name[zh_CN]": "用于未访问的超链接的文本颜色",
+          "description": "By default, the link color is Qt::blue",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "LinkVisited": {
+          "value": "#ad4579",
+          "serial": 0,
+          "flags": [""],
+          "name": "A text color used for already visited hyperlinks",
+          "name[zh_CN]": "用于已经访问过的超链接的颜色",
+          "description": "By default, the linkvisited color is Qt::magenta.",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "AlternateBase": {
+          "value": "0,0,0,13",
+          "serial": 0,
+          "flags": [""],
+          "name": "Used as the alternate background color in views with alternating row colors",
+          "name[zh_CN]": "视图中的交替背景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "NoRole": {
+          "value": "#000000",
+          "serial": 0,
+          "flags": [""],
+          "name": "The default color for the background color is not specified",
+          "name[zh_CN]": "未指定背景色的默认颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "ToolTipBase": {
+          "value": "45,45,45,204",
+          "serial": 0,
+          "flags": [""],
+          "name": "Used as the background color for QToolTip and QWhatsThis",
+          "name[zh_CN]": "提示语句的背景颜色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      },
+      "ToolTipText": {
+          "value": "#c0c6d4",
+          "serial": 0,
+          "flags": [""],
+          "name": "Used as the foreground color for QToolTip and QWhatsThis",
+          "name[zh_CN]": "提示语的前景色",
+          "description": "RGBA color format value",
+          "permissions": "readwrite",
+          "visibility": "private"
+      }
+  }
+}
