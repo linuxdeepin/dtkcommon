@@ -11,25 +11,25 @@ makedepends=('git' 'qt5-tools' 'gtest' 'gmock')
 conflicts=('dtkcore-git<5.4.0' 'dtkcore<5.4.0' 'dtkgui-git<5.4.0' 'dtkgui<5.4.0' 'dtkcommon')
 providers=('dtkcore-git' 'dtkgui-git')
 groups=('deepin-git')
-source=("$pkgname-$pkgver::source.tar.gz")
+source=('source.tar.gz')
 sha512sums=('SKIP')
 pkgver() {
-    cd $pkgname-$pkgver
+    cd $deepin_source_name
     git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
     sed -i 's/qt5/qt/g' dtkcommon.pro
 }
 
 prepare() {
-    cd $pkgname-$pkgver
+    cd $deepin_source_name
 }
 
 build() {
-  cd $pkgname-$pkgver
+  cd $deepin_source_name
   qmake-qt5 PREFIX=/usr DTK_VERSION=$pkgver LIB_INSTALL_DIR=/usr/lib
   make
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd $deepin_source_name
   make INSTALL_ROOT="$pkgdir" install
 }
