@@ -22,3 +22,4 @@ qt_lib_*.pri
 
 .qmake*
 Makefile
+CMakeLists.txt.user
