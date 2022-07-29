@@ -2,7 +2,7 @@ Source: dtkcommon
 Section: libdevel
 Priority: optional
 Maintainer: Deepin Packages Builder <packages@deepin.com>
-Build-depends: debhelper (>= 9), pkg-config, libglib2.0-bin, qttools5-dev-tools, qtbase5-private-dev
+Build-depends: debhelper (>= 9), cmake
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org/
 

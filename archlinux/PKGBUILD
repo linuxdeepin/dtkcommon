@@ -7,25 +7,23 @@ arch=('x86_64' 'aarch64')
 url="https://github.com/linuxdeepin/dtkcommon"
 license=('LGPL3')
 depends=()
-makedepends=('git' 'qt5-tools' 'gtest' 'gmock')
+makedepends=('git' 'cmake' 'ninja')
 conflicts=('dtkcore-git<5.4.0' 'dtkcore<5.4.0' 'dtkgui-git<5.4.0' 'dtkgui<5.4.0' 'dtkcommon')
 providers=('dtkcore-git' 'dtkgui-git')
 groups=('deepin-git')
 source=('source.tar.gz')
 sha512sums=('SKIP')
 
-prepare() {
-    cd $deepin_source_name
-    sed -i 's/qt5/qt/g' dtkcommon.pro
-}
-
 build() {
   cd $deepin_source_name
-  qmake-qt5 PREFIX=/usr DTK_VERSION=$pkgver LIB_INSTALL_DIR=/usr/lib
-  make
+  cmake -GNinja \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DLINUXNAME="archlinux" \
+    -DCMAKE_INSTALL_PREFIX=/usr 
+  ninja
 }
 
 package() {
   cd $deepin_source_name
-  make INSTALL_ROOT="$pkgdir" install
+  DESTDIR="$pkgdir" ninja install
 }
