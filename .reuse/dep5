@@ -1,0 +1,39 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: dtkcommon
+Upstream-Contact: UnionTech Software Technology Co.,Ltd. <>
+Source: https://github.com/linuxdeepin/dtkcommon
+
+# Config files
+Files: .gitignore qt_lib_dtkcommon.pri confs/*
+Copyright: None
+License: CC0-1.0
+
+# Readme
+Files: README.md
+Copyright: None
+License: CC0-1.0
+
+# debian
+Files: debian/*
+Copyright: None
+License: CC0-1.0
+
+# github
+Files: .github/*
+Copyright: None
+License: CC0-1.0
+
+# arch
+Files: archlinux/*
+Copyright: None
+License: CC0-1.0
+
+# rpm
+Files: rpm/*
+Copyright: None
+License: CC0-1.0
+
+# feature
+Files: features/*
+Copyright: None
+License: CC0-1.0

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2022 Uniontech Software Technology Co.,Ltd.
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # This cmake file is used to deploy files that dconfig's meta and override configure.
 
 include(CMakeParseArguments)

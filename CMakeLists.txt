@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2022 Uniontech Software Technology Co.,Ltd.
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 cmake_minimum_required(VERSION 3.10)
 include(GNUInstallDirs)
 #set(DVERSION "5.5.22")
