@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 cmake_minimum_required(VERSION 3.10)
-include(GNUInstallDirs)
 #set(DVERSION "5.5.22")
 option(DVERSION "define project version" "5.5.22")
 if(DVERSION)
@@ -15,6 +14,7 @@ else()
     VERSION "5.5.23"
   )
 endif()
+include(GNUInstallDirs)
 message(${PROJECT_VERSION})
 set(LINUXNAME "debian")
 option(LINUXNAME "linuxname" "debian")
@@ -24,28 +24,12 @@ if (${LINUXNAME} STREQUAL "archlinux")
   set(SPECPATH "qt/mkspecs/")
   message("arch")
 endif()
-set(MODULE_INCLUDES ${CMAKE_INSTALL_LIBDIR}/libdtk-${PROJECT_VERSION_MAJOR})
-set(CONFIGUREFILE
-  "QT.${PROJECT_NAME}.VERSION = ${PROJECT_VERSION}\n"
-  "QT.${PROJECT_NAME}.MAJOR_VERSION = ${PROJECT_VERSION_MAJOR}\n"
-  "QT.${PROJECT_NAME}.MINOR_VERSION = ${PROJECT_VERSION_MINOR}\n"
-  "QT.${PROJECT_NAME}.PATCH_VERSION = ${PROJECT_VERSION_PATCH}\n"
-  "QT.${PROJECT_NAME}.name = dtkcommon\n"
-  "QT.${PROJECT_NAME}.module = dtkcommon\n"
-  "QT.${PROJECT_NAME}.tools = ${MODULE_INCLUDES}\n"
-  "QT.${PROJECT_NAME}.libs = ${CMAKE_INSTALL_LIBDIR}\n"
-  "QT.${PROJECT_NAME}.includes = ${MODULE_INCLUDES}\n"
-  "QT.${PROJECT_NAME}.frameworks = \n"
-  "QT.${PROJECT_NAME}.depends = xml\n"
-  "QT.${PROJECT_NAME}.module_config = v2\n"
-  "QT.${PROJECT_NAME}.DEFINES = \n"
-  "QT_MODULES += "
-)
+set(MODULE_INCLUDES ${CMAKE_INSTALL_FULL_INCLUDEDIR}/libdtk-${PROJECT_VERSION})
+set(MODULE_TOOLS ${CMAKE_INSTALL_FULL_LIBDIR}/libdtk-${PROJECT_VERSION})
+configure_file(misc/qt_lib_dtkcommon.pri.in qt_lib_dtkcommon.pri @ONLY)
 
-file(WRITE qt_lib_dtkcommon.pri ${CONFIGUREFILE})
-
-install(FILES qt_lib_dtkcommon.pri DESTINATION "${CMAKE_INSTALL_LIBDIR}/${SPECPATH}/modules")
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qt_lib_dtkcommon.pri DESTINATION "${CMAKE_INSTALL_LIBDIR}/${SPECPATH}/modules")
 install(FILES schemas/com.deepin.dtk.gschema.xml DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/glib-2.0/schemas")
 install(DIRECTORY features DESTINATION "${CMAKE_INSTALL_LIBDIR}/${SPECPATH}" FILES_MATCHING PATTERN "*" )
-install(DIRECTORY cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Dtk/" FILES_MATCHING  PATTERN "*" )
+install(DIRECTORY cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}" FILES_MATCHING  PATTERN "*" )
 
