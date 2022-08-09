@@ -42,6 +42,6 @@ file(WRITE qt_lib_dtkcommon.pri ${CONFIGUREFILE})
 
 install(FILES qt_lib_dtkcommon.pri DESTINATION "${CMAKE_INSTALL_LIBDIR}/${SPECPATH}/modules")
 install(FILES schemas/com.deepin.dtk.gschema.xml DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/glib-2.0/schemas")
-install(DIRECTORY features DESTINATION "${CMAKE_INSTALL_LIBDIR}/${SPECPATH}/features/" FILES_MATCHING PATTERN "*" )
+install(DIRECTORY features DESTINATION "${CMAKE_INSTALL_LIBDIR}/${SPECPATH}" FILES_MATCHING PATTERN "*" )
 install(DIRECTORY cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Dtk/" FILES_MATCHING  PATTERN "*" )
 
