@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2022 Uniontech Software Technology Co.,Ltd.
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 cmake_minimum_required(VERSION 3.10)
 include(GNUInstallDirs)
 #set(DVERSION "5.5.22")
@@ -21,7 +25,7 @@ if (${LINUXNAME} STREQUAL "archlinux")
   message("arch")
 endif()
 set(MODULE_INCLUDES ${CMAKE_INSTALL_LIBDIR}/libdtk-${PROJECT_VERSION_MAJOR})
-set(CONFIGUREFILE 
+set(CONFIGUREFILE
   "QT.${PROJECT_NAME}.VERSION = ${PROJECT_VERSION}\n"
   "QT.${PROJECT_NAME}.MAJOR_VERSION = ${PROJECT_VERSION_MAJOR}\n"
   "QT.${PROJECT_NAME}.MINOR_VERSION = ${PROJECT_VERSION_MINOR}\n"

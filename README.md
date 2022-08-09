@@ -1,16 +1,39 @@
+## dtkcommon
+
 A public project for building DTK Library
 
-build on debian/uos
-===
+## Dependencies
+
+### build on debian/uos
 requirements:
-+ pkg-config
-+ libglib2.0-bin
-+ qttools5-dev-tools
-+ qtbase5-private-dev
 
+- pkg-config
+- libglib2.0-bin
+- qttools5-dev-tools
+- qtbase5-private-dev
+
+### Build from source code
+
+```bash
 mkdir build && cd build && qmake ../ && make
+```
 
+# Documentations
+
+null
+
+## Getting help
+
+- [Official Forum](https://bbs.deepin.org/) for generic discussion and help.
+- [Developer Center](https://github.com/linuxdeepin/developer-center) for BUG report and suggestions.
+- [Wiki](https://wiki.deepin.org/)
+
+## Getting involved
+
+We encourage you to report issues and contribute changes
+
+- [Contribution guide for developers](https://github.com/linuxdeepin/developer-center/wiki/Contribution-Guidelines-for-Developers-en) (English)
 
 ## License
 
-This project is licensed under [GPL-3+](LICENSE) or any later version.
+This project is licensed under [BSD-3-Clause](LICENSE).
