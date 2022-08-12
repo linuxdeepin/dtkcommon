@@ -4,12 +4,12 @@ Upstream-Contact: UnionTech Software Technology Co.,Ltd. <>
 Source: https://github.com/linuxdeepin/dtkcommon
 
 # Config files
-Files: .gitignore qt_lib_dtkcommon.pri confs/*
+Files: .gitignore misc/* confs/*
 Copyright: None
 License: CC0-1.0
 
 # Readme
-Files: README.md
+Files: README.md README.zh_CN.md
 Copyright: None
 License: CC0-1.0
 
