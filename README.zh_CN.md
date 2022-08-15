@@ -33,7 +33,7 @@ mkdir build && cd build && qmake ../ && make
 
 我们鼓励您报告问题并贡献更改
 
-- [开发者贡献指南](https://github.com/linuxdeepin/developer-center/wiki/Contribution-Guidelines-for-Developers-en) (English)
+- [开发者贡献指南](https://github.com/linuxdeepin/developer-center/wiki/Contribution-Guidelines-for-Developers-en) (英文)
 
 ## 开源许可
 
