@@ -5,6 +5,7 @@ A public project for building DTK Library
 ## Dependencies
 
 ### build on debian/uos
+
 requirements:
 
 - pkg-config
@@ -15,7 +16,7 @@ requirements:
 ### Build from source code
 
 ```bash
-mkdir build && cd build && qmake ../ && make
+cmake -B build && cmake --build build
 ```
 
 # Documentations
