@@ -18,7 +18,7 @@ build() {
   cd $deepin_source_name
   cmake -GNinja \
     -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-    -DLINUXNAME="archlinux" \
+    -DMKSPECS_INSTALL_DIR=/usr/lib/qt/mkspecs/ \
     -DCMAKE_INSTALL_PREFIX=/usr 
   ninja
 }
