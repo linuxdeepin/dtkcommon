@@ -9,8 +9,8 @@ Homepage: http://www.deepin.org/
 Package: libdtkcommon
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Conflicts: libdtkcore5(<< 5.4.10), libdtkgui5(<< 5.4.10)
-Replaces: libdtkcore5(<< 5.4.10), libdtkgui5(<< 5.4.10)
+Conflicts: libdtkcore5(<< 5.4.10)
+Replaces: libdtkcore5(<< 5.4.10)
 Description: dtk common files
  Used to store public configuration files
 
