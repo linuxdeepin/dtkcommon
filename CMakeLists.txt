@@ -3,8 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 cmake_minimum_required(VERSION 3.10)
-#set(DVERSION "5.5.22")
-set (DVERSION "5.6.2" CACHE STRING "define project version")
+set (DVERSION "5.6.3" CACHE STRING "define project version")
 project(dtkcommon
   VERSION ${DVERSION}
   DESCRIPTION "DTK COMMON"
@@ -28,4 +27,3 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qt_lib_dtkcommon.pri DESTINATION "${MK
 install(FILES schemas/com.deepin.dtk.gschema.xml DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/glib-2.0/schemas")
 install(DIRECTORY features DESTINATION "${MKSPECS_INSTALL_DIR}" FILES_MATCHING PATTERN "*" )
 install(DIRECTORY cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}" FILES_MATCHING  PATTERN "*" )
-
