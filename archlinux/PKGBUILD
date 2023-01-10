@@ -15,7 +15,7 @@ sha512sums=('SKIP')
 
 build() {
   cd $deepin_source_name
-  cmake -GNinja \
+  cmake . -GNinja \
     -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DMKSPECS_INSTALL_DIR=/usr/lib/qt/mkspecs/ \
     -DCMAKE_INSTALL_PREFIX=/usr 
