@@ -17,7 +17,7 @@ source:
 
 variables:
   extra_args: |
-    -DVERSION=${VERSION}
+    -DDVERSION=${VERSION}
 
 build:
   kind: cmake
