@@ -9,18 +9,17 @@ project(dtkcommon
   DESCRIPTION "DTK COMMON"
   HOMEPAGE_URL "https://github.com/linuxdeepin/dtkcommon"
 )
-include(GNUInstallDirs)
+message(STATUS "Project version: ${PROJECT_VERSION}")
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX /usr)
 endif ()
 
-message(STATUS ${PROJECT_VERSION})
+include(GNUInstallDirs)
+set (MKSPECS_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/qt5/mkspecs" CACHE STRING "Install directory for qt pri files")
 
-set (MKSPECS_INSTALL_DIR "${CMAKE_INSTALL_FULL_LIBDIR}/qt5/mkspecs" CACHE STRING "INSTALL DIR FOR qt pri files")
-
-set(MODULE_INCLUDES ${CMAKE_INSTALL_FULL_INCLUDEDIR}/libdtk-${PROJECT_VERSION})
-set(MODULE_TOOLS ${CMAKE_INSTALL_FULL_LIBDIR}/libdtk-${PROJECT_VERSION})
+set(MODULE_INCLUDES ${CMAKE_INSTALL_FULL_INCLUDEDIR}/dtk${PROJECT_VERSION_MAJOR})
+set(MODULE_TOOLS ${CMAKE_INSTALL_FULL_LIBDIR}/dtk${PROJECT_VERSION_MAJOR})
 configure_file(misc/qt_lib_dtkcommon.pri.in qt_lib_dtkcommon.pri @ONLY)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qt_lib_dtkcommon.pri DESTINATION "${MKSPECS_INSTALL_DIR}/modules")
