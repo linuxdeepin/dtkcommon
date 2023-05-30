@@ -4,7 +4,7 @@ Upstream-Contact: UnionTech Software Technology Co.,Ltd. <>
 Source: https://github.com/linuxdeepin/dtkcommon
 
 # Config files
-Files: .gitignore misc/* confs/*
+Files: .gitignore configs/*
 Copyright: None
 License: CC0-1.0
 
@@ -35,5 +35,10 @@ License: CC0-1.0
 
 # feature
 Files: features/*
+Copyright: None
+License: CC0-1.0
+
+# misc
+Files: misc/*
 Copyright: None
 License: CC0-1.0

@@ -23,3 +23,10 @@ qt_lib_*.pri
 .qmake*
 Makefile
 CMakeLists.txt.user
+
+debian/.debhelper
+debian/libdtkcommon-dev
+debian/libdtkdata
+debian/tmp
+debian/*.log
+debian/*.substvars

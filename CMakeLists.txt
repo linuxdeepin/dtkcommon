@@ -2,11 +2,11 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-cmake_minimum_required(VERSION 3.10)
-set (DVERSION "5.6.8" CACHE STRING "define project version")
+cmake_minimum_required(VERSION 3.13)
+set (DTK_VERSION "5.6.12" CACHE STRING "define project version")
 project(dtkcommon
-  VERSION ${DVERSION}
-  DESCRIPTION "DTK COMMON"
+  VERSION ${DTK_VERSION}
+  DESCRIPTION "DTK common"
   HOMEPAGE_URL "https://github.com/linuxdeepin/dtkcommon"
 )
 message(STATUS "Project version: ${PROJECT_VERSION}")
@@ -16,13 +16,23 @@ if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 endif ()
 
 include(GNUInstallDirs)
-set (MKSPECS_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/qt5/mkspecs" CACHE STRING "Install directory for qt pri files")
+message(STATUS "CMAKE_INSTALL_LIBDIR: ${CMAKE_INSTALL_LIBDIR}")
+set(QT5_MKSPECS_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/qt5/mkspecs" CACHE STRING "Install directory for qt pri files")
+# Install qt5 features for compatibility
+install(DIRECTORY features DESTINATION "${QT5_MKSPECS_INSTALL_DIR}" FILES_MATCHING PATTERN "*")
+install(DIRECTORY configs DESTINATION "share/dsg" FILES_MATCHING  PATTERN "*")
 
-set(MODULE_INCLUDES ${CMAKE_INSTALL_FULL_INCLUDEDIR}/dtk${PROJECT_VERSION_MAJOR})
-set(MODULE_TOOLS ${CMAKE_INSTALL_FULL_LIBDIR}/dtk${PROJECT_VERSION_MAJOR})
-configure_file(misc/qt_lib_dtkcommon.pri.in qt_lib_dtkcommon.pri @ONLY)
-
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qt_lib_dtkcommon.pri DESTINATION "${MKSPECS_INSTALL_DIR}/modules")
-install(FILES schemas/com.deepin.dtk.gschema.xml DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/glib-2.0/schemas")
-install(DIRECTORY features DESTINATION "${MKSPECS_INSTALL_DIR}" FILES_MATCHING PATTERN "*" )
-install(DIRECTORY cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}" FILES_MATCHING  PATTERN "*" )
+set(VERSION_SUFFIX)
+configure_file(
+  "${CMAKE_SOURCE_DIR}/misc/config.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/DtkConfig.cmake"
+  @ONLY
+)
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/DtkConfig.cmake" DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Dtk")
+set(VERSION_SUFFIX 6)
+configure_file(
+  "${CMAKE_SOURCE_DIR}/misc/config.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/Dtk6Config.cmake"
+  @ONLY
+)
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/Dtk6Config.cmake" DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Dtk6")
