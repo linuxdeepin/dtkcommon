@@ -1,3 +1,2 @@
-usr/lib/*/cmake/Dtk/*
+usr/lib/*/cmake/*
 usr/lib/*/*/mkspecs/features/*
-usr/lib/*/*/mkspecs/modules/*

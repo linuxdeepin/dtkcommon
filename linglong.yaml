@@ -13,12 +13,11 @@ depends:
   - id: qtbase/5.15.7
 
 source:
-  kind: local 
+  kind: local
 
 variables:
   extra_args: |
-    -DDVERSION=${VERSION}
+    -DDTK_VERSION=${VERSION}
 
 build:
   kind: cmake
-

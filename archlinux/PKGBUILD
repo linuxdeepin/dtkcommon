@@ -19,9 +19,10 @@ sha512sums=('SKIP')
 build() {
   cd "$sourcedir"
   cmake . -GNinja \
-    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-    -DMKSPECS_INSTALL_DIR=/usr/lib/qt/mkspecs/ \
-    -DCMAKE_INSTALL_PREFIX=/usr 
+    -DDTK_VERSION=$pkgver \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DQT5_MKSPECS_INSTALL_DIR=lib/qt/mkspecs/ \
+    -DCMAKE_INSTALL_PREFIX=/usr
   ninja
 }
 
@@ -29,4 +30,3 @@ package() {
   cd "$sourcedir"
   DESTDIR="$pkgdir" ninja install
 }
-
