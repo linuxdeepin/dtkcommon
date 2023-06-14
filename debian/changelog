@@ -1,3 +1,12 @@
+dtkcommon (5.6.12) unstable; urgency=medium
+
+  * chore: Sync by https://github.com/linuxdeepin/.github/commit/c5d10d3aeb9233a70f6290cb89d3b193f7b1f804(Influence: none)
+  * chore: Sync by https://github.com/linuxdeepin/.github/commit/2e5e092ba3f86b16d1aabbabcf0bfd2ae65b19c8(Influence: none)
+  * chore(cmake): optimize install directory
+  * BREAKING_CHANGE: update to dtk6
+
+ -- Deepin Packages Builder <packages@deepin.org>  Mon, 12 Jun 2023 17:00:43 +0800
+
 dtkcommon (5.6.9) unstable; urgency=medium
 
   * Release 5.6.9
