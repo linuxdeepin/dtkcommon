@@ -16,11 +16,7 @@ if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 endif ()
 
 include(GNUInstallDirs)
-message(STATUS "CMAKE_INSTALL_LIBDIR: ${CMAKE_INSTALL_LIBDIR}")
-set(QT5_MKSPECS_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/qt5/mkspecs" CACHE STRING "Install directory for qt pri files")
-# Install qt5 features for compatibility
-install(DIRECTORY features DESTINATION "${QT5_MKSPECS_INSTALL_DIR}" FILES_MATCHING PATTERN "*")
-install(DIRECTORY configs DESTINATION "share/dsg" FILES_MATCHING  PATTERN "*")
+install(DIRECTORY configs DESTINATION "share/dsg" FILES_MATCHING PATTERN "*")
 
 set(VERSION_SUFFIX)
 configure_file(

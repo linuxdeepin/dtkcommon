@@ -33,11 +33,6 @@ Files: rpm/*
 Copyright: None
 License: CC0-1.0
 
-# feature
-Files: features/*
-Copyright: None
-License: CC0-1.0
-
 # misc
 Files: misc/*
 Copyright: None

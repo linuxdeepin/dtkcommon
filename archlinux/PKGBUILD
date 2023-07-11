@@ -18,10 +18,10 @@ sha512sums=('SKIP')
 
 build() {
   cd "$sourcedir"
+  version=$(shell echo $pkgver | awk -F'[+_~-]' '{print $$1}')
   cmake . -GNinja \
-    -DDTK_VERSION=$pkgver \
+    -DDTK_VERSION=$version \
     -DCMAKE_INSTALL_LIBDIR=lib \
-    -DQT5_MKSPECS_INSTALL_DIR=lib/qt/mkspecs/ \
     -DCMAKE_INSTALL_PREFIX=/usr
   ninja
 }
