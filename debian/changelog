@@ -1,3 +1,10 @@
+dtkcommon (5.6.14) unstable; urgency=medium
+
+  * chore: Sync by https://github.com/linuxdeepin/.github/commit/559e91167d4919644f37bbcf123eb0651c1528ea(Influence: none)
+  * refactor!: remove Qt features for DTK
+
+ -- Deepin Packages Builder <packages@deepin.org>  Thu, 27 Jul 2023 06:56:31 +0000
+
 dtkcommon (5.6.12) unstable; urgency=medium
 
   * chore: Sync by https://github.com/linuxdeepin/.github/commit/c5d10d3aeb9233a70f6290cb89d3b193f7b1f804(Influence: none)
