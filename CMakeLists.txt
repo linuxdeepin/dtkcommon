@@ -25,6 +25,7 @@ configure_file(
   @ONLY
 )
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/DtkConfig.cmake" DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Dtk")
+install(FILES "${CMAKE_SOURCE_DIR}/cmake/DtkBuildHelper.cmake" DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Dtk")
 set(VERSION_SUFFIX 6)
 configure_file(
   "${CMAKE_SOURCE_DIR}/misc/config.cmake.in"
