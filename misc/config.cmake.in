@@ -5,3 +5,5 @@ include(CMakeFindDependencyMacro)
 foreach(module ${Dtk@VERSION_SUFFIX@_FIND_COMPONENTS})
     find_dependency(Dtk@VERSION_SUFFIX@${module})
 endforeach()
+
+include(${CMAKE_CURRENT_LIST_DIR}/DtkBuildHelper.cmake)
