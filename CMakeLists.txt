@@ -33,3 +33,4 @@ configure_file(
   @ONLY
 )
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/Dtk6Config.cmake" DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Dtk6")
+install(FILES "${CMAKE_SOURCE_DIR}/cmake/DtkBuildHelper.cmake" DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Dtk6")
