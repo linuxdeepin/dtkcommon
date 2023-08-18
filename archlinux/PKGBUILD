@@ -18,7 +18,7 @@ sha512sums=('SKIP')
 
 build() {
   cd "$sourcedir"
-  version=$(shell echo $pkgver | awk -F'[+_~-]' '{print $$1}')
+  version=$(echo $pkgver | awk -F'[+_~-]' '{print $1}')
   cmake . -GNinja \
     -DDTK_VERSION=$version \
     -DCMAKE_INSTALL_LIBDIR=lib \
