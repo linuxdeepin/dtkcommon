@@ -1,3 +1,14 @@
+dtkcommon (5.6.16) unstable; urgency=medium
+
+  * feat(cmake): add cmake functions
+  * chore: include DtkBuildHelper.cmake
+  * fix: can't find DtkBuildHelper in Dtk6
+  * chore: move DtkBuildHelper to separate module (#55)
+  * chore: not include DtkBuildHelper (#56)
+  * fix(build): archlinux build DTK_VERSION empty
+
+ -- Deepin Packages Builder <packages@deepin.org>  Tue, 22 Aug 2023 06:13:45 +0000
+
 dtkcommon (5.6.15) unstable; urgency=medium
 
   * Release 5.6.15
