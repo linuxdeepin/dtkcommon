@@ -4,7 +4,7 @@
 
 include(CMakeParseArguments)
 
-# generate dtk moudule config header file.
+# generate dtk module config header file.
 #
 # MODULE_NAME   - module name.  ${MODULE_NAME}_config.h
 # DEST_DIR      - used to get header file dest path, if it's empty, ${CMAKE_CURRENT_SOURCE_DIR} is used.
