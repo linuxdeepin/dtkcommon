@@ -1,3 +1,10 @@
+dtkcommon (5.6.18) unstable; urgency=medium
+
+  * chore: correct a typo in DtkBuildHelper.cmake
+    Thanks to Felix Yan
+
+ -- Deepin Packages Builder <packages@deepin.org>  Wed, 18 Oct 2023 06:01:44 +0000
+
 dtkcommon (5.6.17) unstable; urgency=medium
 
   * Release 5.6.17
