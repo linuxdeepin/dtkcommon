@@ -1,3 +1,9 @@
+dtkcommon (5.6.20) unstable; urgency=medium
+
+  * feat: add config for dstyle
+
+ -- Deepin Packages Builder <packages@deepin.org>  Tue, 28 Nov 2023 05:40:52 +0000
+
 dtkcommon (5.6.19) unstable; urgency=medium
 
   [ root ]
