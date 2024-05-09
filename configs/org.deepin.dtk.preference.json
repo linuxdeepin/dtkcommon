@@ -62,6 +62,17 @@
             "description": "Configures whether disable the typing to search for menu items, which would otherwise require pressing Shift or Alt to trigger the menu item directly.",
             "permissions": "readwrite",
             "visibility": "public"
+        },
+        "rules": {
+            "value": "",
+            "serial": 0,
+            "flags": [],
+            "name": "The logging rules of dtk applications",
+            "name[zh_CN]": "日志输出的规则配置",
+            "description": "Configure the category and level of log output",
+            "description[zh_CN]": "配置日志输出的类别和等级",
+            "permissions": "readwrite",
+            "visibility": "public"
         }
     }
 }
