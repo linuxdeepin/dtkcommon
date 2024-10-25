@@ -73,6 +73,17 @@
             "description[zh_CN]": "配置日志输出的类别和等级",
             "permissions": "readwrite",
             "visibility": "public"
+        },
+        "enableDtkAnimations": {
+            "value": false,
+            "serial": 0,
+            "flags": [],
+            "name": "Whether to enable dtk animation effects",
+            "name[zh_CN]": "是否启用 dtk 控件动画效果",
+            "description": "Configure to enable/disable animation effects. Note that you need to restart the application to take effect.",
+            "description[zh_CN]": "配置启/禁用动画效果，注意需要重启应用生效配置。",
+            "permissions": "readwrite",
+            "visibility": "public"
         }
     }
 }
