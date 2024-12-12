@@ -1,3 +1,10 @@
+dtkcommon (5.7.5) unstable; urgency=medium
+
+  [ root ]
+  * UNRELEASED
+
+ -- Deepin Packages Builder <packages@deepin.org>  Thu, 12 Dec 2024 03:03:53 +0000
+
 dtkcommon (5.7.4) unstable; urgency=medium
 
   * feat: add 'scrollBarPolicy' and 'sizeMode' config
