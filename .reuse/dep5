@@ -39,6 +39,6 @@ Copyright: None
 License: CC0-1.0
 
 # cmake
-Files: *.cmake *CMakeLists.txt *.pc.in
+Files: *.cmake *CMakeLists.txt *.pc.in VERSION VERSION.in
 Copyright: None
 License: CC0-1.0
