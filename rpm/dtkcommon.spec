@@ -1,5 +1,5 @@
 Name:    dtkcommon
-Version: 5.5.17
+Version: 5.7.17
 Release: 1
 Summary: dtk common files
 Source0: %{name}-%{version}.orig.tar.xz
