@@ -64,7 +64,7 @@
             "visibility": "public"
         },
         "rules": {
-            "value": "",
+            "value": "*.debug=false",
             "serial": 0,
             "flags": [],
             "name": "The logging rules of dtk applications",
