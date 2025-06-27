@@ -1,11 +1,14 @@
-Name:    dtkcommon
-Version: 5.7.17
-Release: 1
-Summary: dtk common files
-Source0: %{name}-%{version}.orig.tar.xz
-
-License: GPLv3
-
+Name:           dtkcommon
+Version:        5.7.17
+Release:        1%{?dist}
+Summary:        dtk common files
+License:        LGPLv3+
+URL:            https://github.com/linuxdeepin/dtkcommon
+%if 0%{?fedora}
+Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+%else
+Source0:        %{name}-%{version}.orig.tar.xz
+%endif
 BuildRequires:  qt5-qtbase-devel
 
 Obsoletes:      dtkcore <= 5.4.10
