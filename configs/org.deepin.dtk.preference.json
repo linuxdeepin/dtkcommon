@@ -106,6 +106,26 @@
             "description[zh_CN]": "配置是否开启紧凑模式, 0为禁用, 1为启用",
             "permissions": "readwrite",
             "visibility": "public"
+        },
+        "defaultColorMode": {
+            "value": "color",
+            "serial": 0,
+            "flags": [],
+            "name": "Default Color Mode config",
+            "name[zh_CN]": "默认色彩配置",
+            "description": "Default Configure the color mode",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "colorMode": {
+            "value": "",
+            "serial": 0,
+            "flags": [],
+            "name": "Color Mode config",
+            "name[zh_CN]": "色彩配置",
+            "description": "Configure the color mode",
+            "permissions": "readwrite",
+            "visibility": "private"
         }
     }
 }
