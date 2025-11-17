@@ -65,8 +65,8 @@
         },
         "rules": {
             "value": "*.debug=false",
-            "serial": 0,
-            "flags": [],
+            "serial": 1,
+            "flags": ["global"],
             "name": "The logging rules of dtk applications",
             "name[zh_CN]": "日志输出的规则配置",
             "description": "Configure the category and level of log output",
