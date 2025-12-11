@@ -1,5 +1,5 @@
 Name:           dtkcommon
-Version:        5.7.28
+Version:        5.7.30
 Release:        1%{?dist}
 Summary:        dtk common files
 License:        LGPLv3+
