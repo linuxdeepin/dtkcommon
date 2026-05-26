@@ -85,6 +85,17 @@
             "permissions": "readwrite",
             "visibility": "public"
         },
+        "disableInWindowBlur": {
+            "value": false,
+            "serial": 0,
+            "flags": [],
+            "name": "Whether to disable InWindowBlur effect",
+            "name[zh_CN]": "是否禁用窗口内模糊效果",
+            "description": "Configure to disable InWindowBlur effect. Default is not disabled (enabled).",
+            "description[zh_CN]": "配置禁用窗口内模糊效果。默认不禁用（启用）。",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
         "scrollBarPolicy": {
             "value": 0,
             "serial": 0,
