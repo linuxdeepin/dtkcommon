@@ -64,8 +64,8 @@
             "visibility": "public"
         },
         "rules": {
-            "value": "*.debug=false",
-            "serial": 1,
+            "value": "*.debug=false,*.info=false",
+            "serial": 2,
             "flags": ["global"],
             "name": "The logging rules of dtk applications",
             "name[zh_CN]": "日志输出的规则配置",
