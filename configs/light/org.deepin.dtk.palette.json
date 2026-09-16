@@ -1,0 +1,326 @@
+{
+    "magic": "dsg.config.meta",
+    "version": "1.0",
+    "contents": {
+        "qPaletteWindowText": {
+            "value": "#B2000000",
+            "serial": 0,
+            "name": "QPalette::WindowText color",
+            "name[zh_CN]": "QPalette::WindowText 颜色",
+            "description": "The WindowText role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 WindowText 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteButton": {
+            "value": "#FFE5E5E5",
+            "serial": 0,
+            "name": "QPalette::Button color",
+            "name[zh_CN]": "QPalette::Button 颜色",
+            "description": "The Button role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Button 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteLight": {
+            "value": "#FFE6E6E6",
+            "serial": 0,
+            "name": "QPalette::Light color",
+            "name[zh_CN]": "QPalette::Light 颜色",
+            "description": "The Light role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Light 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteMidlight": {
+            "value": "#FFE5E5E5",
+            "serial": 0,
+            "name": "QPalette::Midlight color",
+            "name[zh_CN]": "QPalette::Midlight 颜色",
+            "description": "The Midlight role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Midlight 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteDark": {
+            "value": "#FFE3E3E3",
+            "serial": 0,
+            "name": "QPalette::Dark color",
+            "name[zh_CN]": "QPalette::Dark 颜色",
+            "description": "The Dark role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Dark 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteMid": {
+            "value": "#FFE4E4E4",
+            "serial": 0,
+            "name": "QPalette::Mid color",
+            "name[zh_CN]": "QPalette::Mid 颜色",
+            "description": "The Mid role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Mid 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteText": {
+            "value": "#B2000000",
+            "serial": 0,
+            "name": "QPalette::Text color",
+            "name[zh_CN]": "QPalette::Text 颜色",
+            "description": "The Text role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Text 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteBrightText": {
+            "value": "#FF000000",
+            "serial": 0,
+            "name": "QPalette::BrightText color",
+            "name[zh_CN]": "QPalette::BrightText 颜色",
+            "description": "The BrightText role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 BrightText 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteButtonText": {
+            "value": "#B2000000",
+            "serial": 0,
+            "name": "QPalette::ButtonText color",
+            "name[zh_CN]": "QPalette::ButtonText 颜色",
+            "description": "The ButtonText role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 ButtonText 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteBase": {
+            "value": "#FFFFFFFF",
+            "serial": 0,
+            "name": "QPalette::Base color",
+            "name[zh_CN]": "QPalette::Base 颜色",
+            "description": "The Base role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Base 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteWindow": {
+            "value": "#FFF8F8F8",
+            "serial": 0,
+            "name": "QPalette::Window color",
+            "name[zh_CN]": "QPalette::Window 颜色",
+            "description": "The Window role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Window 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteShadow": {
+            "value": "#0C000000",
+            "serial": 0,
+            "name": "QPalette::Shadow color",
+            "name[zh_CN]": "QPalette::Shadow 颜色",
+            "description": "The Shadow role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Shadow 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteHighlight": {
+            "value": "#FF0081FF",
+            "serial": 0,
+            "name": "QPalette::Highlight color",
+            "name[zh_CN]": "QPalette::Highlight 颜色",
+            "description": "The Highlight role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Highlight 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteHighlightedText": {
+            "value": "#FFFFFFFF",
+            "serial": 0,
+            "name": "QPalette::HighlightedText color",
+            "name[zh_CN]": "QPalette::HighlightedText 颜色",
+            "description": "The HighlightedText role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 HighlightedText 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteLink": {
+            "value": "#FF0082FA",
+            "serial": 0,
+            "name": "QPalette::Link color",
+            "name[zh_CN]": "QPalette::Link 颜色",
+            "description": "The Link role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 Link 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteLinkVisited": {
+            "value": "#FFAD4579",
+            "serial": 0,
+            "name": "QPalette::LinkVisited color",
+            "name[zh_CN]": "QPalette::LinkVisited 颜色",
+            "description": "The LinkVisited role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 LinkVisited 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteAlternateBase": {
+            "value": "#07000000",
+            "serial": 0,
+            "name": "QPalette::AlternateBase color",
+            "name[zh_CN]": "QPalette::AlternateBase 颜色",
+            "description": "The AlternateBase role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 AlternateBase 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteNoRole": {
+            "value": "#FFFFFFFF",
+            "serial": 0,
+            "name": "QPalette::NoRole color",
+            "name[zh_CN]": "QPalette::NoRole 颜色",
+            "description": "The NoRole color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 NoRole 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteToolTipBase": {
+            "value": "#CCFFFFFF",
+            "serial": 0,
+            "name": "QPalette::ToolTipBase color",
+            "name[zh_CN]": "QPalette::ToolTipBase 颜色",
+            "description": "The ToolTipBase role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 ToolTipBase 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "qPaletteToolTipText": {
+            "value": "#D8000000",
+            "serial": 0,
+            "name": "QPalette::ToolTipText color",
+            "name[zh_CN]": "QPalette::ToolTipText 颜色",
+            "description": "The ToolTipText role color of QPalette, in #AARRGGBB format",
+            "description[zh_CN]": "QPalette 的 ToolTipText 角色颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteNoType": {
+            "value": "",
+            "serial": 0,
+            "name": "DPalette::NoType color",
+            "name[zh_CN]": "DPalette::NoType 颜色",
+            "description": "The NoType color of DPalette, empty string for invalid color",
+            "description[zh_CN]": "DPalette 的 NoType 颜色，空字符串表示无效颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteItemBackground": {
+            "value": "#07000000",
+            "serial": 0,
+            "name": "DPalette::ItemBackground color",
+            "name[zh_CN]": "DPalette::ItemBackground 颜色",
+            "description": "The ItemBackground color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 ItemBackground 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteTextTitle": {
+            "value": "#D8000000",
+            "serial": 0,
+            "name": "DPalette::TextTitle color",
+            "name[zh_CN]": "DPalette::TextTitle 颜色",
+            "description": "The TextTitle color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 TextTitle 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteTextTips": {
+            "value": "#99000000",
+            "serial": 0,
+            "name": "DPalette::TextTips color",
+            "name[zh_CN]": "DPalette::TextTips 颜色",
+            "description": "The TextTips color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 TextTips 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteTextWarning": {
+            "value": "#FFFF5736",
+            "serial": 0,
+            "name": "DPalette::TextWarning color",
+            "name[zh_CN]": "DPalette::TextWarning 颜色",
+            "description": "The TextWarning color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 TextWarning 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteTextLively": {
+            "value": "#FF000000",
+            "serial": 0,
+            "name": "DPalette::TextLively color",
+            "name[zh_CN]": "DPalette::TextLively 颜色",
+            "description": "The TextLively color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 TextLively 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteLightLively": {
+            "value": "#FF0081FF",
+            "serial": 0,
+            "name": "DPalette::LightLively color",
+            "name[zh_CN]": "DPalette::LightLively 颜色",
+            "description": "The LightLively color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 LightLively 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteDarkLively": {
+            "value": "#FF0081FF",
+            "serial": 0,
+            "name": "DPalette::DarkLively color",
+            "name[zh_CN]": "DPalette::DarkLively 颜色",
+            "description": "The DarkLively color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 DarkLively 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteFrameBorder": {
+            "value": "#0C000000",
+            "serial": 0,
+            "name": "DPalette::FrameBorder color",
+            "name[zh_CN]": "DPalette::FrameBorder 颜色",
+            "description": "The FrameBorder color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 FrameBorder 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPalettePlaceholderText": {
+            "value": "#66555555",
+            "serial": 0,
+            "name": "DPalette::PlaceholderText color",
+            "name[zh_CN]": "DPalette::PlaceholderText 颜色",
+            "description": "The PlaceholderText color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 PlaceholderText 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteFrameShadowBorder": {
+            "value": "#19000000",
+            "serial": 0,
+            "name": "DPalette::FrameShadowBorder color",
+            "name[zh_CN]": "DPalette::FrameShadowBorder 颜色",
+            "description": "The FrameShadowBorder color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 FrameShadowBorder 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dPaletteObviousBackground": {
+            "value": "#19000000",
+            "serial": 0,
+            "name": "DPalette::ObviousBackground color",
+            "name[zh_CN]": "DPalette::ObviousBackground 颜色",
+            "description": "The ObviousBackground color of DPalette, in #AARRGGBB format",
+            "description[zh_CN]": "DPalette 的 ObviousBackground 颜色，格式为 #AARRGGBB",
+            "permissions": "readwrite",
+            "visibility": "public"
+        }
+    }
+}
