@@ -1,0 +1,326 @@
+{
+    "magic": "dsg.config.meta",
+    "version": "1.0",
+    "contents": {
+        "windowText": {
+            "value": "#B2000000",
+            "serial": 0,
+            "name": "Foreground color",
+            "name[zh_CN]": "前景色",
+            "description": "Foreground text color for general window content, such as labels and non-editable text",
+            "description[zh_CN]": "窗口中一般内容的前景文本颜色，如标签和不可编辑的文本",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "button": {
+            "value": "#FFE5E5E5",
+            "serial": 0,
+            "name": "Button background color",
+            "name[zh_CN]": "按钮背景色",
+            "description": "Background color for buttons and other 3D bevel controls",
+            "description[zh_CN]": "按钮及其他3D凸起控件的背景颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "light": {
+            "value": "#FFE6E6E6",
+            "serial": 0,
+            "name": "Light color",
+            "name[zh_CN]": "浅色",
+            "description": "Lighter edge color used for 3D bevel highlighting",
+            "description[zh_CN]": "用于3D凸起效果高光边缘的浅色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "midlight": {
+            "value": "#FFE5E5E5",
+            "serial": 0,
+            "name": "Midlight color",
+            "name[zh_CN]": "中浅色",
+            "description": "Intermediate light edge color for 3D bevel effects",
+            "description[zh_CN]": "用于3D凸起效果的中浅色边缘",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "dark": {
+            "value": "#FFE3E3E3",
+            "serial": 0,
+            "name": "Dark color",
+            "name[zh_CN]": "深色",
+            "description": "Darker edge color used for 3D bevel shadows",
+            "description[zh_CN]": "用于3D凸起效果阴影边缘的深色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "mid": {
+            "value": "#FFE4E4E4",
+            "serial": 0,
+            "name": "Mid color",
+            "name[zh_CN]": "中间色",
+            "description": "Middle tone color for 3D bevel effects, between dark and light",
+            "description[zh_CN]": "用于3D凸起效果的中间色调，介于深色和浅色之间",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "text": {
+            "value": "#B2000000",
+            "serial": 0,
+            "name": "Text color",
+            "name[zh_CN]": "文本色",
+            "description": "Text color for editable text in input fields like line edits and text areas",
+            "description[zh_CN]": "输入框、文本域等可编辑控件中的文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "brightText": {
+            "value": "#FF000000",
+            "serial": 0,
+            "name": "Bright text color",
+            "name[zh_CN]": "鲜明文本色",
+            "description": "High-contrast text color for visibility against dark backgrounds",
+            "description[zh_CN]": "用于在深色背景上保持高对比度可读性的文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "buttonText": {
+            "value": "#B2000000",
+            "serial": 0,
+            "name": "Button text color",
+            "name[zh_CN]": "按钮文本色",
+            "description": "Text color displayed on buttons",
+            "description[zh_CN]": "按钮上显示的文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "base": {
+            "value": "#FFFFFFFF",
+            "serial": 0,
+            "name": "Base background color",
+            "name[zh_CN]": "基础背景色",
+            "description": "Background color for input controls such as text fields, list views and combo boxes",
+            "description[zh_CN]": "文本输入框、列表视图、下拉框等输入控件的背景色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "window": {
+            "value": "#FFF8F8F8",
+            "serial": 0,
+            "name": "Window background color",
+            "name[zh_CN]": "窗口背景色",
+            "description": "General window background color for panels and non-input areas",
+            "description[zh_CN]": "窗口、面板等非输入区域的通用背景色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "shadow": {
+            "value": "#0C000000",
+            "serial": 0,
+            "name": "Shadow color",
+            "name[zh_CN]": "阴影色",
+            "description": "Shadow color used for recessed or 3D border effects",
+            "description[zh_CN]": "用于凹陷效果或3D边框的阴影颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "highlight": {
+            "value": "#FF0081FF",
+            "serial": 0,
+            "name": "Highlight color",
+            "name[zh_CN]": "高亮色",
+            "description": "Background color for selected items in lists, menus and text selections",
+            "description[zh_CN]": "列表、菜单选中和文本选择时的选中项背景色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "highlightedText": {
+            "value": "#FFFFFFFF",
+            "serial": 0,
+            "name": "Highlighted text color",
+            "name[zh_CN]": "高亮文本色",
+            "description": "Text color for selected items in lists, menus and text selections",
+            "description[zh_CN]": "列表、菜单选中和文本选择时的选中项文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "link": {
+            "value": "#FF0082FA",
+            "serial": 0,
+            "name": "Link color",
+            "name[zh_CN]": "链接色",
+            "description": "Color for unvisited hyperlink text",
+            "description[zh_CN]": "未访问超链接的文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "linkVisited": {
+            "value": "#FFAD4579",
+            "serial": 0,
+            "name": "Visited link color",
+            "name[zh_CN]": "已访问链接色",
+            "description": "Color for visited hyperlink text",
+            "description[zh_CN]": "已访问超链接的文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "alternateBase": {
+            "value": "#07000000",
+            "serial": 0,
+            "name": "Alternate base color",
+            "name[zh_CN]": "交替背景色",
+            "description": "Alternating row background color in list and tree views for improved readability",
+            "description[zh_CN]": "列表和树视图中交替行的背景色，用于提高可读性",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "noRole": {
+            "value": "#FFFFFFFF",
+            "serial": 0,
+            "name": "No role color",
+            "name[zh_CN]": "无角色",
+            "description": "No specific role; uses widget default behavior",
+            "description[zh_CN]": "无特定角色，使用控件默认行为",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "toolTipBase": {
+            "value": "#CCFFFFFF",
+            "serial": 0,
+            "name": "Tooltip background color",
+            "name[zh_CN]": "提示框背景色",
+            "description": "Background color for tooltip popups",
+            "description[zh_CN]": "工具提示弹窗的背景色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "toolTipText": {
+            "value": "#D8000000",
+            "serial": 0,
+            "name": "Tooltip text color",
+            "name[zh_CN]": "提示框文本色",
+            "description": "Text color for tooltip popups",
+            "description[zh_CN]": "工具提示弹窗的文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "noType": {
+            "value": "",
+            "serial": 0,
+            "name": "No type color",
+            "name[zh_CN]": "无类型",
+            "description": "No specific type; uses default behavior",
+            "description[zh_CN]": "无特定类型，使用默认行为",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "itemBackground": {
+            "value": "#07000000",
+            "serial": 0,
+            "name": "Item background color",
+            "name[zh_CN]": "项背景色",
+            "description": "Background color for list and view items",
+            "description[zh_CN]": "列表和视图中列表项的背景色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "textTitle": {
+            "value": "#D8000000",
+            "serial": 0,
+            "name": "Title text color",
+            "name[zh_CN]": "标题文本色",
+            "description": "Text color for title headings in dialogs and panels",
+            "description[zh_CN]": "对话框和面板中标题文本的颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "textTips": {
+            "value": "#99000000",
+            "serial": 0,
+            "name": "Tips text color",
+            "name[zh_CN]": "提示文本色",
+            "description": "Text color for hint and tip messages",
+            "description[zh_CN]": "提示和说明信息的文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "textWarning": {
+            "value": "#FFFF5736",
+            "serial": 0,
+            "name": "Warning text color",
+            "name[zh_CN]": "警告文本色",
+            "description": "Text color for warning messages",
+            "description[zh_CN]": "警告信息的文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "textLively": {
+            "value": "#FF000000",
+            "serial": 0,
+            "name": "Lively text color",
+            "name[zh_CN]": "活跃文本色",
+            "description": "Emphasis text color for drawing attention to important content",
+            "description[zh_CN]": "用于强调重要内容的活跃文本颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "lightLively": {
+            "value": "#FF0081FF",
+            "serial": 0,
+            "name": "Light lively color",
+            "name[zh_CN]": "浅活跃色",
+            "description": "Light-themed emphasis color for highlights in light mode",
+            "description[zh_CN]": "浅色主题下用于强调高亮的颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "darkLively": {
+            "value": "#FF0081FF",
+            "serial": 0,
+            "name": "Dark lively color",
+            "name[zh_CN]": "深活跃色",
+            "description": "Dark-themed emphasis color for highlights in dark mode",
+            "description[zh_CN]": "深色主题下用于强调高亮的颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "frameBorder": {
+            "value": "#0C000000",
+            "serial": 0,
+            "name": "Frame border color",
+            "name[zh_CN]": "边框色",
+            "description": "Border color for control frames and outlines",
+            "description[zh_CN]": "控件边框和轮廓的颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "placeholderText": {
+            "value": "#66555555",
+            "serial": 0,
+            "name": "Placeholder text color",
+            "name[zh_CN]": "占位符文本色",
+            "description": "Placeholder hint text color in empty input fields",
+            "description[zh_CN]": "空输入框中占位提示文本的颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "frameShadowBorder": {
+            "value": "#19000000",
+            "serial": 0,
+            "name": "Frame shadow border color",
+            "name[zh_CN]": "边框阴影色",
+            "description": "Shadow border color for control frame depth effects",
+            "description[zh_CN]": "控件边框阴影深度效果的颜色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "obviousBackground": {
+            "value": "#19000000",
+            "serial": 0,
+            "name": "Obvious background color",
+            "name[zh_CN]": "显著背景色",
+            "description": "Prominent background color for areas requiring visual emphasis",
+            "description[zh_CN]": "需要视觉强调区域的显著背景色",
+            "permissions": "readwrite",
+            "visibility": "public"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+Source: dtkcommon
+Section: libdevel
+Priority: optional
+Maintainer: Deepin Packages Builder <packages@deepin.com>
+Build-depends: debhelper (>= 9), cmake
+Standards-Version: 3.9.8
+Homepage: http://www.deepin.org/
+
+Package: libdtkdata
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Conflicts: libdtkcommon
+Replaces: libdtkcommon
+Description: dtk common files
+ Used to store public configuration files
+
+Package: libdtkcommon-dev
+Architecture: any
+Conflicts: libdtkcore-dev(<< 5.4.10)
+Replaces: libdtkcore-dev(<< 5.4.10)
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: dtk common files
+ Used to store public build files
