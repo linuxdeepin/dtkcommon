@@ -25,9 +25,11 @@ include(CMakeParseArguments)
 #
 #    filename: ${CMAKE_CURRENT_SOURCE_DIR}/include/global/dtkcore_config.h
 #    ==== file content begin ====
+# REUSE-IgnoreStart
 #    // SPDX-FileCopyrightText: 2022 UnionTech Software Technology Co., Ltd.
 #    //
 #    // SPDX-License-Identifier: LGPL-3.0-or-later
+# REUSE-IgnoreEnd
 #
 #    #define DTK_VERSION_MAJOR 5
 #    #define DTK_VERSION_MINOR 5
@@ -65,11 +67,13 @@ function(dtk_gen_config_header)
         message(FATAL_ERROR \"MODULE_NAME needs to be defined when calling dtk_gen_config_header\")
     endif()
 
+    # REUSE-IgnoreStart
     set(LICENSE_DEC 
     "// SPDX-FileCopyrightText: 2023 UnionTech Software Technology Co., Ltd.\n"
     "//\n"
     "// SPDX-License-Identifier: LGPL-3.0-or-later\n"
     "\n")
+    # REUSE-IgnoreEnd
 
     file(WRITE ${config_file_path} ${LICENSE_DEC})
 
