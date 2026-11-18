@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.7.54] - 2026-11-18
+
+### Changed
+
+- Sync by https://github.com/linuxdeepin/.github/commit/88d36aea6c90c8d1de4d42c68aebbf72bcb80b1c
+
 ## [6.7.53] - 2026-11-10
 
 ## [6.7.52] - 2026-10-28
