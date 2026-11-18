@@ -66,7 +66,9 @@
         "rules": {
             "value": "*.debug=false;*.info=false",
             "serial": 2,
-            "flags": ["global"],
+            "flags": [
+                "global"
+            ],
             "name": "The logging rules of dtk applications",
             "name[zh_CN]": "日志输出的规则配置",
             "description": "Configure the category and level of log output",
@@ -137,6 +139,114 @@
             "description": "Configure the color mode",
             "permissions": "readwrite",
             "visibility": "private"
+        },
+        "lightQPalette": {
+            "value": [
+                "#B2000000",
+                "#FFE5E5E5",
+                "#FFE6E6E6",
+                "#FFE5E5E5",
+                "#FFE3E3E3",
+                "#FFE4E4E4",
+                "#B2000000",
+                "#FF000000",
+                "#B2000000",
+                "#FFFFFFFF",
+                "#FFF8F8F8",
+                "#0C000000",
+                "#FF0081FF",
+                "#FFFFFFFF",
+                "#FF0082FA",
+                "#FFAD4579",
+                "#07000000",
+                "#FFFFFFFF",
+                "#CCFFFFFF",
+                "#D8000000"
+            ],
+            "serial": 0,
+            "name": "Light QPalette color array",
+            "name[zh_CN]": "亮色调色板颜色数组",
+            "description": "Color array for light theme QPalette, ordered by QPalette::ColorRole enum (WindowText through ToolTipText)",
+            "description[zh_CN]": "亮色主题QPalette颜色数组，按QPalette::ColorRole枚举顺序排列（WindowText至ToolTipText）",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "darkQPalette": {
+            "value": [
+                "#B2FFFFFF",
+                "#FF444444",
+                "#FF484848",
+                "#FF474747",
+                "#FF414141",
+                "#FF434343",
+                "#B2FFFFFF",
+                "#FFFFFFFF",
+                "#B2FFFFFF",
+                "#FF282828",
+                "#FF252525",
+                "#0C000000",
+                "#FF024CCA",
+                "#FFF1F6FF",
+                "#FF0082FA",
+                "#FFAD4579",
+                "#0C000000",
+                "#FF000000",
+                "#CC2D2D2D",
+                "#D8FFFFFF"
+            ],
+            "serial": 0,
+            "name": "Dark QPalette color array",
+            "name[zh_CN]": "暗色调色板颜色数组",
+            "description": "Color array for dark theme QPalette, ordered by QPalette::ColorRole enum (WindowText through ToolTipText)",
+            "description[zh_CN]": "暗色主题QPalette颜色数组，按QPalette::ColorRole枚举顺序排列（WindowText至ToolTipText）",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "lightDPalette": {
+            "value": [
+                "",
+                "#07000000",
+                "#D8000000",
+                "#99000000",
+                "#FFFF5736",
+                "#FF000000",
+                "#FF0081FF",
+                "#FF0081FF",
+                "#0C000000",
+                "#66555555",
+                "#19000000",
+                "#19000000"
+            ],
+            "serial": 0,
+            "name": "Light DPalette color array",
+            "name[zh_CN]": "亮色DPalette颜色数组",
+            "description": "Color array for light theme DPalette, ordered by DPalette::ColorType enum (NoType through ObviousBackground)",
+            "description[zh_CN]": "亮色主题DPalette颜色数组，按DPalette::ColorType枚举顺序排列（NoType至ObviousBackground）",
+            "permissions": "readwrite",
+            "visibility": "public"
+        },
+        "darkDPalette": {
+            "value": [
+                "",
+                "#0CFFFFFF",
+                "#D8FFFFFF",
+                "#99FFFFFF",
+                "#FFE43F2E",
+                "#FFFFFFFF",
+                "#FF0059D2",
+                "#FF0059D2",
+                "#19FFFFFF",
+                "#66C0C6D4",
+                "#CC000000",
+                "#19FFFFFF"
+            ],
+            "serial": 0,
+            "name": "Dark DPalette color array",
+            "name[zh_CN]": "暗色DPalette颜色数组",
+            "description": "Color array for dark theme DPalette, ordered by DPalette::ColorType enum (NoType through ObviousBackground)",
+            "description[zh_CN]": "暗色主题DPalette颜色数组，按DPalette::ColorType枚举顺序排列（NoType至ObviousBackground）",
+            "permissions": "readwrite",
+            "visibility": "public"
         }
     }
 }
